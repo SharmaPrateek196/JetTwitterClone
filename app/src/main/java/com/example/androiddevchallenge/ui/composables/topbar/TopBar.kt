@@ -42,7 +42,7 @@ fun TwitterIcon(
             modifier = modifier
                 .padding(16.dp)
                 .align(Alignment.Center)
-                .offset(-25.dp)
+                .offset((-25).dp)
         )
         TimelineIcon(
             modifier = Modifier
