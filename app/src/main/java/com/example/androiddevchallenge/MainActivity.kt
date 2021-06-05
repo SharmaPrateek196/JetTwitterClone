@@ -5,10 +5,12 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
+import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
 import com.example.androiddevchallenge.ui.theme.TwitterTheme
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TwitterTheme {
-                MyApp()
+                MainTopAppBar()
             }
         }
     }

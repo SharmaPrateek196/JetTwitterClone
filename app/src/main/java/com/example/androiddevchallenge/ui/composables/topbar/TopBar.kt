@@ -1,19 +1,25 @@
 package com.example.androiddevchallenge.ui.composables.topbar
 
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
+import androidx.compose.material.Surface
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 
 @Composable
 fun MainTopAppBar() {
-    TopAppBar(
-        title = { TwitterIcon(Modifier) },
-        navigationIcon = { MenuIcon(Modifier) }
-    )
+    Surface {
+        TopAppBar(
+            title = { TwitterIcon(Modifier) },
+            navigationIcon = { MenuIcon(Modifier) }
+        )
+    }
 }
 
 @Preview
@@ -26,11 +32,18 @@ fun MainTopAppBarPreview() {
 fun TwitterIcon(
     modifier: Modifier
 ) {
-    Icon(
-        painter = painterResource(id = R.drawable.ic_twitter),
-        contentDescription = null,
-        modifier = modifier
-    )
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center,
+    ) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_twitter),
+            contentDescription = null,
+            modifier = modifier
+                .padding(16.dp)
+        )
+    }
 }
 
 @Composable
@@ -40,7 +53,7 @@ fun MenuIcon(
     Icon(
         painter = painterResource(id = R.drawable.ic_menu),
         contentDescription = null,
-        modifier = modifier
+        modifier = modifier.size(25.dp)
     )
 }
 
