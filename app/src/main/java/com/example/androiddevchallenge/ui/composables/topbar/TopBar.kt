@@ -34,14 +34,20 @@ fun TwitterIcon(
 ) {
     Box(
         modifier = Modifier
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center,
+            .fillMaxSize()
     ) {
         Icon(
             painter = painterResource(id = R.drawable.ic_twitter),
             contentDescription = null,
             modifier = modifier
                 .padding(16.dp)
+                .align(Alignment.Center)
+                .offset(-25.dp)
+        )
+        TimelineIcon(
+            modifier = Modifier
+                .align(Alignment.CenterEnd)
+                .padding(end = 16.dp)
         )
     }
 }
@@ -53,7 +59,9 @@ fun MenuIcon(
     Icon(
         painter = painterResource(id = R.drawable.ic_menu),
         contentDescription = null,
-        modifier = modifier.size(25.dp)
+        modifier = modifier
+            .size(25.dp)
+            .offset(16.dp)
     )
 }
 
