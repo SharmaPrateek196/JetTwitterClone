@@ -16,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,15 +28,18 @@ import com.example.androiddevchallenge.ui.theme.twitterBlue
 @Composable
 fun StoryUnseenThumbnail(
     @DrawableRes imageResource: Int,
-    modifier: Modifier,
+    userName: String,
     imageViewSize: Int
 ) {
-    Surface {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.width(imageViewSize.dp)
+    ) {
         Image(
             painter = painterResource(id = imageResource),
             null,
             contentScale = ContentScale.FillBounds,
-            modifier = modifier
+            modifier = Modifier
                 .size(imageViewSize.dp)
                 .clip(
                     shape = circularShape
@@ -46,13 +50,22 @@ fun StoryUnseenThumbnail(
                 )
                 .padding(3.dp)
         )
+
+        Text(
+            text = userName,
+            style = TextStyle(
+                fontSize = 4.sp,
+                color = grey,
+            ),
+            overflow = TextOverflow.Ellipsis,
+            maxLines = 1
+        )
     }
 }
 
 @Composable
 fun StorySeenThumbnail(
     @DrawableRes imageResource: Int,
-    modifier: Modifier,
     imageViewSize: Int
 ) {
     Surface {
@@ -60,7 +73,7 @@ fun StorySeenThumbnail(
             painter = painterResource(id = imageResource),
             null,
             contentScale = ContentScale.FillBounds,
-            modifier = modifier
+            modifier = Modifier
                 .size(imageViewSize.dp)
                 .clip(
                     shape = circularShape
@@ -128,7 +141,7 @@ fun AddImage(
 fun StoryUnseenThumbnailPreview(){
     StoryUnseenThumbnail(
         R.drawable.twitter_logo,
-        Modifier,
+        "Prateek",
         35
     )
 }
@@ -138,7 +151,6 @@ fun StoryUnseenThumbnailPreview(){
 fun StoryseenThumbnailPreview(){
     StorySeenThumbnail(
         R.drawable.twitter_logo,
-        Modifier,
         35
     )
 }

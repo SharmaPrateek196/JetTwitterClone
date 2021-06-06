@@ -1,8 +1,6 @@
 package com.example.androiddevchallenge.ui.composables.story
 
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -25,14 +23,19 @@ fun StoryPalette(
             item {
                 StoryAddThumbnail(
                     imageResource = R.drawable.my_pic,
-                    modifier = Modifier.padding(start = 16.dp)
+                    modifier = Modifier
                 )
             }
             for (i in 1..12) {
                 item {
+                    Spacer(
+                        modifier = Modifier
+                            .width(8.dp)
+                    )
+
                     StoryUnseenThumbnail(
                         imageResource = R.drawable.twitter_logo,
-                        modifier = Modifier.padding(start = 8.dp),
+                        "This text should be truncated",
                         imageViewSize = 35
                     )
                 }
