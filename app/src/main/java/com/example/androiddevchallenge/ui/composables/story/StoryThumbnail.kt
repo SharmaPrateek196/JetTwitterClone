@@ -51,10 +51,14 @@ fun StoryUnseenThumbnail(
                 .padding(3.dp)
         )
 
+        Spacer(
+            modifier = Modifier.height(4.dp)
+        )
+
         Text(
             text = userName,
             style = TextStyle(
-                fontSize = 4.sp,
+                fontSize = 10.sp,
                 color = grey,
             ),
             overflow = TextOverflow.Ellipsis,
@@ -85,32 +89,39 @@ fun StorySeenThumbnail(
 @Composable
 fun StoryAddThumbnail(
     @DrawableRes imageResource: Int,
-    modifier: Modifier
+    modifier: Modifier,
+    imageViewSize: Int
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SelectionContainer(
-            modifier.padding(start = 16.dp)
+            modifier.padding(start = 12.dp)
         ) {
             Image(
                 painter = painterResource(id = imageResource),
                 null,
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
-                    .size(35.dp)
+                    .size(imageViewSize.dp)
                     .clip(
                         shape = circularShape
                     )
             )
             AddImage(
-                modifier = Modifier.padding(start = 2.dp, top = 2.dp)
+                modifier = Modifier
+                    .padding(start = 2.dp, top = 2.dp)
             )
         }
+
+        Spacer(
+            modifier = Modifier.height(5.dp)
+        )
+
         Text(
             text = "Add",
             style = TextStyle(
-                fontSize = 4.sp,
+                fontSize = 10.sp,
                 color = grey,
             ),
             modifier = Modifier.padding(start = 16.dp)
@@ -130,8 +141,8 @@ fun AddImage(
             painter = painterResource(id = R.drawable.ic_add),
             contentDescription = null,
             modifier = Modifier
-                .size(6.dp)
-                .padding((1/2).dp)
+                .size(10.dp)
+                .padding((1 / 2).dp)
         )
     }
 }
@@ -160,7 +171,8 @@ fun StoryseenThumbnailPreview(){
 fun StoryAddPreview(){
     StoryAddThumbnail(
         R.drawable.twitter_logo,
-        Modifier
+        Modifier,
+        35
     )
 }
 

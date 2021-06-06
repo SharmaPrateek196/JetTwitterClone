@@ -17,13 +17,14 @@ fun StoryPalette(
     Surface(
         modifier = modifier
             .wrapContentSize()
-            .padding(4.dp)
+            .padding(start = 4.dp, top = 8.dp, end = 4.dp, bottom = 4.dp)
     ) {
         LazyRow {
             item {
                 StoryAddThumbnail(
                     imageResource = R.drawable.my_pic,
-                    modifier = Modifier
+                    modifier = Modifier,
+                    imageViewSize = 44
                 )
             }
             for (i in 1..12) {
@@ -36,7 +37,7 @@ fun StoryPalette(
                     StoryUnseenThumbnail(
                         imageResource = R.drawable.twitter_logo,
                         "This text should be truncated",
-                        imageViewSize = 35
+                        imageViewSize = 45
                     )
                 }
             }

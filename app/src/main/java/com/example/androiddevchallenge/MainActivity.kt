@@ -3,8 +3,9 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Divider
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -16,17 +17,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApp()
+            MainScreen()
         }
     }
 }
 
 @Composable
-fun MyApp() {
-    Surface(
-        color = MaterialTheme.colors.background
+fun MainScreen() {
+    Scaffold(
+        topBar = { MainTopAppBar() }
     ) {
-        StoryPalette(modifier = Modifier)
+        Column {
+            StoryPalette(modifier = Modifier)
+            Divider()
+        }
     }
 }
 
@@ -34,7 +38,7 @@ fun MyApp() {
 @Composable
 fun LightPreview() {
     TwitterTheme {
-        MyApp()
+        MainScreen()
     }
 }
 
@@ -42,6 +46,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     TwitterTheme(darkTheme = true) {
-        MyApp()
+        MainScreen()
     }
 }
