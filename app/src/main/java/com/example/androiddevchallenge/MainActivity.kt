@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 @Composable
 fun MainScreen() {
+
     Scaffold(
         topBar = { MainTopAppBar() }
     ) {
