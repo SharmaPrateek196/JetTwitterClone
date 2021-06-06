@@ -7,15 +7,21 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.circularShape
+import com.example.androiddevchallenge.ui.theme.grey
 import com.example.androiddevchallenge.ui.theme.twitterBlue
 
 @Composable
@@ -66,25 +72,36 @@ fun StorySeenThumbnail(
 @Composable
 fun StoryAddThumbnail(
     @DrawableRes imageResource: Int,
-    modifier: Modifier,
-    imageViewSize: Int
+    modifier: Modifier
 ) {
-    Surface {
-        SelectionContainer {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        SelectionContainer(
+            modifier.padding(start = 16.dp)
+        ) {
             Image(
                 painter = painterResource(id = imageResource),
                 null,
                 contentScale = ContentScale.FillBounds,
-                modifier = modifier
-                    .size(imageViewSize.dp)
+                modifier = Modifier
+                    .size(35.dp)
                     .clip(
                         shape = circularShape
                     )
             )
             AddImage(
-                modifier
+                modifier = Modifier.padding(start = 2.dp, top = 2.dp)
             )
         }
+        Text(
+            text = "Add",
+            style = TextStyle(
+                fontSize = 4.sp,
+                color = grey,
+            ),
+            modifier = Modifier.padding(start = 16.dp)
+        )
     }
 }
 
@@ -93,14 +110,15 @@ fun AddImage(
     modifier: Modifier
 ) {
     Surface(
-        shape = circularShape
+        shape = circularShape,
+        modifier = modifier
     ) {
         Image(
             painter = painterResource(id = R.drawable.ic_add),
             contentDescription = null,
-            modifier = modifier
-                .size(8.dp)
-                .padding(1.dp)
+            modifier = Modifier
+                .size(6.dp)
+                .padding((1/2).dp)
         )
     }
 }
@@ -130,8 +148,7 @@ fun StoryseenThumbnailPreview(){
 fun StoryAddPreview(){
     StoryAddThumbnail(
         R.drawable.twitter_logo,
-        Modifier,
-        35
+        Modifier
     )
 }
 
