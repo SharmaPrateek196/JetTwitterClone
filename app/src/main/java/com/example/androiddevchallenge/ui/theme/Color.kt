@@ -26,3 +26,13 @@ val twitterBlue = Color(0xFF1FA1F1)
 val blackLessDark = Color(0xC4010203)
 val grey = Color(0xFF5F5C5C)
 val dividerColor = Color(0x32808080)
+
+val white50 = Color(0xFFFFFFFF)
+val white100 = Color(0xFFFAFAFA)
+val white200 = Color(0xFFF5F5F5)
+val white300 = Color(0xFFF0F0F0)
+
+val black = Color(0xFF000000)
+val black800 = Color(0xFF3C3C3C)
+val black700 = Color(0xFF5B5B5B)
+val black600 = Color(0xFF6E6E6E)
