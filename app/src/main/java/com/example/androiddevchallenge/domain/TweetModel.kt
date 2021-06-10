@@ -1,16 +1,18 @@
 package com.example.androiddevchallenge.domain
 
 data class TweetModel (
+    val id: Int,
     val tweeterName: String,
     val handleName: String,
     val timeTweeted: String,
     val isVerified: Boolean = false,
-    val userImageResource: Int,
+    val tweetText: String,
+    val userImageResource: String,
     val hasImage: Boolean = false,
-    val imageResource: Int,
+    val imageResource: String,
     val hasVideo: Boolean,
     val videoUrl: String,
-    val totalComments: String,
-    val totalRetweets: String,
-    val totalLikes: String
+    val totalComments: Int,
+    val totalRetweets: Int,
+    val totalLikes: Int
 )
