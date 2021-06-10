@@ -6,35 +6,32 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.androiddevchallenge.data.TweetsRepo
 import com.example.androiddevchallenge.domain.TweetModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
 @HiltViewModel
-class TweetsScreenVM: ViewModel() {
+class TweetsScreenVM @Inject constructor(): ViewModel() {
 
-    var tweetsState = mutableStateOf(TweetsScreenState.Loading)
+    var tweetsState = mutableStateOf<TweetsScreenState>(TweetsScreenState.Loading)
         private set
 
     fun loadTweets() {
         viewModelScope.launch {
-
+            tweetsState.value = TweetsScreenState.Loading
+            delay(300)
+            val result = TweetsRepo.tweets
+            tweetsState.value = TweetsScreenState.Success(result)
         }
     }
 
-
-
-
-
-
-
-
-
-
     sealed class TweetsScreenState() {
         object Loading: TweetsScreenState()
-        class Success(data: List<TweetModel>)
-        class Error(message: String, exception: Exception = Exception())
+        class Success(val data: List<TweetModel>): TweetsScreenState()
+        class Error(val message: String, val exception: Exception = Exception()): TweetsScreenState()
     }
 }

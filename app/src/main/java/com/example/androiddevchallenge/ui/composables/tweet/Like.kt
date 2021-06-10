@@ -24,7 +24,7 @@ import com.example.androiddevchallenge.ui.theme.tweetActionItemsWidth
 
 @Composable
 fun Like(
-    totalLikes: String
+    totalLikes: Int
 ) {
     Surface {
         SelectionContainer {
@@ -39,7 +39,7 @@ fun Like(
                 )
                 Spacer(modifier = Modifier.width(2.dp))
                 Text(
-                    text = totalLikes,
+                    text = totalLikes.toString(),
                     style = TextStyle(
                         color = grey,
                         fontSize = tweetActionItemsFontSize
@@ -48,10 +48,4 @@ fun Like(
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun LikePreview() {
-    Like("21")
 }

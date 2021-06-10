@@ -13,15 +13,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.circularShape
+import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun CircularImage(
-    @DrawableRes imageResource: Int,
+    imageResource: String,
     modifier: Modifier,
     imageViewSize: Int
 ) {
-    Image(
-        painter = painterResource(id = imageResource),
+    CoilImage(
+        data = imageResource,
         null,
         contentScale = ContentScale.FillBounds,
         modifier = modifier
@@ -29,15 +30,5 @@ fun CircularImage(
             .clip(
                 shape = circularShape
             )
-    )
-}
-
-@Preview
-@Composable
-fun CircularImagePreview(){
-    CircularImage(
-        R.drawable.ic_launcher_background,
-        Modifier,
-        100
     )
 }

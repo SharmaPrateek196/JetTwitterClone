@@ -12,6 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.domain.TweetModel
 import com.example.androiddevchallenge.ui.composables.image.CircularImage
 import com.example.androiddevchallenge.ui.composables.image.TweetImage
 import com.example.androiddevchallenge.ui.composables.text.UserHandleText
@@ -24,18 +25,7 @@ import com.example.androiddevchallenge.ui.theme.*
 
 @Composable
 fun Tweet(
-    tweeterName: String,
-    handleName: String,
-    timeTweeted: String,
-    isVerified: Boolean,
-    userImageResource: Int,
-    hasImage: Boolean,
-    imageResource: Int = 0,
-    hasVideo: Boolean,
-    videoUrl: String? = null,
-    totalComments: String,
-    totalRetweets: String,
-    totalLikes: String,
+    tweet: TweetModel,
     modifier: Modifier
 ) {
 
@@ -46,7 +36,7 @@ fun Tweet(
                 .height(IntrinsicSize.Max)
         ) {
             CircularImage(
-                imageResource = userImageResource,
+                imageResource = tweet.userImageResource,
                 modifier = modifier,
                 imageViewSize = 45
             )
@@ -61,8 +51,8 @@ fun Tweet(
                 )
             ) {
                 Row(Modifier.height(IntrinsicSize.Max)) {
-                    UserNameBold(name = tweeterName, fontSize = usernameSize)
-                    if(isVerified) {
+                    UserNameBold(name = tweet.tweeterName, fontSize = usernameSize)
+                    if(tweet.isVerified) {
                         Image(
                             painter = painterResource(R.drawable.ic_verified_tick),
                             contentDescription = null,
@@ -70,12 +60,12 @@ fun Tweet(
                         )
                     }
                     UserHandleText(
-                        handleName = handleName,
+                        handleName = tweet.handleName,
                         fontSize = userHandleSize,
                         modifier = Modifier.padding(start = 3.dp)
                     )
                     Text(
-                        text = timeTweeted,
+                        text = tweet.timeTweeted,
                         color = grey,
                         fontSize = timeTextSize,
                         modifier = Modifier.padding(start = 3.dp)
@@ -92,42 +82,22 @@ fun Tweet(
                     text = "An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal.",
                     fontSize = tweetTextSize
                 )
-                if (hasImage) {
+                if (tweet.hasImage) {
                     Spacer(modifier = Modifier.height(4.dp))
                     TweetImage(
-                        imageResource = imageResource,
+                        imageResource = tweet.imageResource,
                         modifier = Modifier.height(95.dp)
                     )
                 }
                 Spacer(modifier = Modifier.height(6.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Comment(totalComments)
-                    Retweet(totalRetweets)
-                    Like(totalLikes)
+                    Comment(tweet.totalComments)
+                    Retweet(tweet.totalRetweets)
+                    Like(tweet.totalLikes)
                     Share()
                 }
             }
         }
     }
 
-}
-
-@Preview
-@Composable
-fun TweetItemPreview() {
-    Tweet(
-        "Prateek Sharma",
-        "@prateekharmaofficial",
-        "7h",
-        true,
-        R.drawable.my_pic,
-        true,
-        R.drawable.my_pic,
-        false,
-        "",
-        "125",
-        "6,534",
-        "541",
-        Modifier
-    )
 }

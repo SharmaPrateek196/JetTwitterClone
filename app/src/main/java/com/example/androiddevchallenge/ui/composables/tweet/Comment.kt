@@ -22,7 +22,7 @@ import com.example.androiddevchallenge.ui.theme.tweetActionItemsWidth
 
 @Composable
 fun Comment(
-    totalComments: String
+    totalComments: Int
 ) {
     Surface {
         SelectionContainer {
@@ -37,7 +37,7 @@ fun Comment(
                 )
                 Spacer(modifier = Modifier.width(2.dp))
                 Text(
-                    text = totalComments,
+                    text = totalComments.toString(),
                     style = TextStyle(
                         color = grey,
                         fontSize = tweetActionItemsFontSize
@@ -46,12 +46,4 @@ fun Comment(
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun CommentPreview() {
-    Comment(
-        "2,978"
-    )
 }

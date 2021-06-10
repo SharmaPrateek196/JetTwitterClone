@@ -12,27 +12,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.rectangulerShapeRounderCorner
+import dev.chrisbanes.accompanist.coil.CoilImage
 
 @Composable
 fun TweetImage(
-    @DrawableRes imageResource: Int,
+    imageResource: String,
     modifier: Modifier
 ) {
-        Image(
-            painter = painterResource(id = imageResource),
+        CoilImage(
+            data = imageResource,
             contentDescription = null,
             modifier = modifier.clip(
                 rectangulerShapeRounderCorner
             ),
             contentScale = ContentScale.FillBounds
         )
-}
-
-@Preview
-@Composable
-fun TweetImagePreview() {
-    TweetImage(
-        R.drawable.tweet_img_3,
-        Modifier
-    )
 }

@@ -3,7 +3,7 @@ package com.example.androiddevchallenge.data
 import com.example.androiddevchallenge.domain.TweetModel
 
 object TweetsRepo {
-    val tweets = listOf<TweetModel>(
+    val tweets = listOf(
 
         TweetModel (
             id = 1,
@@ -42,7 +42,7 @@ object TweetsRepo {
         TweetModel (
             id = 7,
             tweeterName = "Narendra Modi",
-            handleName = "narendramodi",
+            handleName = "@narendramodi",
             timeTweeted = "9m",
             isVerified = true,
             tweetText = "Congratulations to " +
@@ -54,7 +54,7 @@ object TweetsRepo {
                     ". Efforts are underway to ensure more universities and institutions of India scale global excellence and support intellectual prowess among the youth. ",
             userImageResource = "https://pbs.twimg.com/profile_images/1249934092994375680/xX66NSZP_400x400.jpg",
             hasImage = false,
-            imageResource = false,
+            imageResource = "",
             hasVideo = false,
             videoUrl = "",
             totalComments = 872,

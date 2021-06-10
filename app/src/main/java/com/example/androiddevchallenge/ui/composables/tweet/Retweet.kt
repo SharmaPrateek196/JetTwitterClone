@@ -24,7 +24,7 @@ import com.example.androiddevchallenge.ui.theme.tweetActionItemsWidth
 
 @Composable
 fun Retweet(
-    totalRetweets: String
+    totalRetweets: Int
 ) {
     Surface {
         SelectionContainer {
@@ -39,7 +39,7 @@ fun Retweet(
                 )
                 Spacer(modifier = Modifier.width(2.dp))
                 Text(
-                    text = totalRetweets,
+                    text = totalRetweets.toString(),
                     style = TextStyle(
                         color = grey,
                         fontSize = tweetActionItemsFontSize
@@ -50,10 +50,3 @@ fun Retweet(
     }
 }
 
-@Preview
-@Composable
-fun RetweetPreview() {
-    Retweet(
-        "174"
-    )
-}

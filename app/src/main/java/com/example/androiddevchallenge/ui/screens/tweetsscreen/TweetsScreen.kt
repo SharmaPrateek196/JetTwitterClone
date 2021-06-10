@@ -1,6 +1,8 @@
 package com.example.androiddevchallenge.ui.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -8,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.androiddevchallenge.ui.composables.Tweet
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
 import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
@@ -39,11 +42,25 @@ fun TweetsScreen(
 }
 
 @Composable
-fun TweetsList(tweetsLiveData: TweetsScreenState) {
-    when(tweetsLiveData) {
+fun TweetsList(state: TweetsScreenState) {
+    when(state) {
         is TweetsScreenState.Loading -> {
 
         }
-        is TweetsScreenState.
+        is TweetsScreenState.Success -> {
+            val list = state.data
+            LazyColumn {
+                items(list) { tweetModel ->
+                    Tweet(
+                        tweet = tweetModel,
+                        modifier = Modifier
+                    )
+                    Divider()
+                }
+            }
+        }
+        is TweetsScreenState.Error -> {
+
+        }
     }
 }
