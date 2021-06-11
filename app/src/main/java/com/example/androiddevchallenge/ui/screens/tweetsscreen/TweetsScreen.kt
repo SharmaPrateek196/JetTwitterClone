@@ -51,10 +51,12 @@ fun TweetsList(state: TweetsScreenState) {
             val list = state.data
             LazyColumn {
                 items(list) { tweetModel ->
-                    Tweet(
-                        tweet = tweetModel,
-                        modifier = Modifier
-                    )
+                    key(tweetModel.id) {
+                        Tweet(
+                            tweet = tweetModel,
+                            modifier = Modifier
+                        )
+                    }
                     Divider()
                 }
             }

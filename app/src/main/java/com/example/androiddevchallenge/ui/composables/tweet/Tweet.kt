@@ -68,7 +68,7 @@ fun Tweet(
                         text = tweet.timeTweeted,
                         color = grey,
                         fontSize = timeTextSize,
-                        modifier = Modifier.padding(start = 3.dp)
+                        modifier = Modifier.padding(start = 6.dp)
                     )
                     Row(
                         Modifier.fillMaxSize(32f),
@@ -79,14 +79,14 @@ fun Tweet(
                     }
                 }
                 Text(
-                    text = "An essay is nothing but a piece of content which is written from the perception of writer or author. Essays are similar to a story, pamphlet, thesis, etc. The best thing about Essay is you can use any type of language – formal or informal.",
+                    text = tweet.tweetText,
                     fontSize = tweetTextSize
                 )
                 if (tweet.hasImage) {
                     Spacer(modifier = Modifier.height(4.dp))
                     TweetImage(
                         imageResource = tweet.imageResource,
-                        modifier = Modifier.height(95.dp)
+                        modifier = Modifier//.height(95.dp)
                     )
                 }
                 Spacer(modifier = Modifier.height(6.dp))
