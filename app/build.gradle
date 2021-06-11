@@ -93,9 +93,7 @@ dependencies {
     kaptAndroidTest "com.google.dagger:hilt-compiler:$hilt_version"
 
     //coil for image loading
-    implementation "dev.chrisbanes.accompanist:accompanist-coil:0.5.0"
-    implementation "dev.chrisbanes.accompanist:accompanist-picasso:0.5.0"
-    implementation "dev.chrisbanes.accompanist:accompanist-glide:0.5.0"
+    implementation "com.google.accompanist:accompanist-coil:0.10.0"
 
     testImplementation 'junit:junit:4.13.2'
 
