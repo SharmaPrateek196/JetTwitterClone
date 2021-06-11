@@ -14,13 +14,16 @@ import com.example.androiddevchallenge.ui.composables.Tweet
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
 import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
-import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsScreenState
+import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
+import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
 
 @Composable
 fun TweetsScreen(
     navController: NavController,
     viewModel: TweetsScreenVM = hiltViewModel()
 ) {
+    viewModel.loadStories()
+    val storiesMutableState = remember { viewModel.storiesState }
     viewModel.loadTweets()
     val tweetsMutableState = remember { viewModel.tweetsState }
 
@@ -30,7 +33,7 @@ fun TweetsScreen(
     ) {
 
         Column {
-            StoryPalette(modifier = Modifier)
+            StoriesList(storiesMutableState.value)
 
             Divider(
                 color = MaterialTheme.colors.onPrimary
@@ -42,12 +45,34 @@ fun TweetsScreen(
 }
 
 @Composable
-fun TweetsList(state: TweetsScreenState) {
+fun StoriesList(
+    state: TweetsScreenVM.StoriesListState
+) {
     when(state) {
-        is TweetsScreenState.Loading -> {
+        is StoriesListState.Loading -> {
 
         }
-        is TweetsScreenState.Success -> {
+        is StoriesListState.Success -> {
+            StoryPalette(
+                stories = state.data,
+                modifier = Modifier
+            )
+        }
+        is StoriesListState.Error -> {
+
+        }
+    }
+}
+
+@Composable
+fun TweetsList(
+    state: TweetsListState
+) {
+    when(state) {
+        is TweetsListState.Loading -> {
+
+        }
+        is TweetsListState.Success -> {
             val list = state.data
             LazyColumn {
                 items(list) { tweetModel ->
@@ -61,7 +86,7 @@ fun TweetsList(state: TweetsScreenState) {
                 }
             }
         }
-        is TweetsScreenState.Error -> {
+        is TweetsListState.Error -> {
 
         }
     }

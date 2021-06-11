@@ -21,14 +21,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.domain.StoryModel
 import com.example.androiddevchallenge.ui.theme.circularShape
 import com.example.androiddevchallenge.ui.theme.grey
 import com.example.androiddevchallenge.ui.theme.twitterBlue
+import com.google.accompanist.coil.rememberCoilPainter
 
 @Composable
 fun StoryUnseenThumbnail(
-    @DrawableRes imageResource: Int,
-    userName: String,
+    storyModel: StoryModel,
     imageViewSize: Int
 ) {
     Column(
@@ -36,9 +37,9 @@ fun StoryUnseenThumbnail(
         modifier = Modifier.width(imageViewSize.dp)
     ) {
         Image(
-            painter = painterResource(id = imageResource),
+            painter = rememberCoilPainter(storyModel.url),
             null,
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(imageViewSize.dp)
                 .clip(
@@ -48,7 +49,6 @@ fun StoryUnseenThumbnail(
                     border = BorderStroke(2.dp, twitterBlue),
                     shape = circularShape
                 )
-                .padding(3.dp)
         )
 
         Spacer(
@@ -56,7 +56,7 @@ fun StoryUnseenThumbnail(
         )
 
         Text(
-            text = userName,
+            text = storyModel.userName,
             style = TextStyle(
                 fontSize = 10.sp,
                 color = grey,
@@ -69,12 +69,12 @@ fun StoryUnseenThumbnail(
 
 @Composable
 fun StorySeenThumbnail(
-    @DrawableRes imageResource: Int,
+    storyModel: StoryModel,
     imageViewSize: Int
 ) {
     Surface {
         Image(
-            painter = painterResource(id = imageResource),
+            painter = rememberCoilPainter(storyModel.url),
             null,
             contentScale = ContentScale.FillBounds,
             modifier = Modifier
@@ -145,41 +145,4 @@ fun AddImage(
                 .padding((1 / 2).dp)
         )
     }
-}
-
-@Preview
-@Composable
-fun StoryUnseenThumbnailPreview(){
-    StoryUnseenThumbnail(
-        R.drawable.twitter_logo,
-        "Prateek",
-        35
-    )
-}
-
-@Preview
-@Composable
-fun StoryseenThumbnailPreview(){
-    StorySeenThumbnail(
-        R.drawable.twitter_logo,
-        35
-    )
-}
-
-@Preview
-@Composable
-fun StoryAddPreview(){
-    StoryAddThumbnail(
-        R.drawable.twitter_logo,
-        Modifier,
-        35
-    )
-}
-
-@Preview
-@Composable
-fun AddImagePreview(){
-    AddImage(
-        Modifier
-    )
 }
