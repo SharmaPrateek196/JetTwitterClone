@@ -29,7 +29,7 @@ fun TweetsScreen(
 
     Scaffold(
         topBar = { MainTopAppBar() },
-        backgroundColor = MaterialTheme.colors.background
+        backgroundColor = MaterialTheme.colors.background,
     ) {
 
         Column {
