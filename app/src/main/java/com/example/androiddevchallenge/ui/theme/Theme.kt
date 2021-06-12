@@ -25,22 +25,22 @@ import androidx.compose.ui.tooling.preview.Preview
 
 private val LightColorPalette = lightColors(
     primary = white50,
-    primaryVariant = white100,
-    secondary = white200,
+    primaryVariant = white50,
+    secondary = twitterBlue,
     background = white50,
     surface = white50,
-    onPrimary = black,
-    onSecondary = black,
-    onBackground = black,
-    onSurface = black
+    onPrimary = black800,
+    onSecondary = black800,
+    onBackground = black800,
+    onSurface = black800
 )
 
 private val DarkColorPalette = darkColors(
     primary = black800,
-    primaryVariant = black700,
-    secondary = black600,
+    primaryVariant = black800,
+    secondary = twitterBlue,
     background = black800,
-    surface = black700,
+    surface = black800,
     onPrimary = white50,
     onSecondary = white50,
     onBackground = white50,

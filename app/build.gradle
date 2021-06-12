@@ -95,6 +95,9 @@ dependencies {
     //coil for image loading
     implementation "com.google.accompanist:accompanist-coil:0.10.0"
 
+    //For Status Bar coloring
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.10.0"
+
     testImplementation 'junit:junit:4.13.2'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
