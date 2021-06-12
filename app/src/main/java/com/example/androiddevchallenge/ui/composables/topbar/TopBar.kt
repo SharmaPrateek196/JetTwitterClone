@@ -1,10 +1,7 @@
 package com.example.androiddevchallenge.ui.composables.topbar
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Icon
-import androidx.compose.material.Surface
-import androidx.compose.material.TopAppBar
-import androidx.compose.material.contentColorFor
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,19 +13,20 @@ import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.twitterBlue
 
 @Composable
-fun MainTopAppBar() {
+fun MainTopAppBar(
+    onMenuClicked: () -> Unit
+) {
     Surface {
         TopAppBar(
             title = { TwitterIcon(Modifier) },
-            navigationIcon = { MenuIcon(Modifier) }
+            navigationIcon = {
+                MenuIcon(
+                    Modifier,
+                    onMenuClicked
+                ) },
+            elevation = 0.dp
         )
     }
-}
-
-@Preview
-@Composable
-fun MainTopAppBarPreview() {
-    MainTopAppBar()
 }
 
 @Composable
@@ -45,7 +43,8 @@ fun TwitterIcon(
             modifier = modifier
                 .padding(16.dp)
                 .align(Alignment.Center)
-                .offset((-25).dp)
+                .offset((-25).dp),
+            tint = twitterBlue
         )
         TimelineIcon(
             modifier = Modifier
@@ -57,15 +56,19 @@ fun TwitterIcon(
 
 @Composable
 fun MenuIcon(
-    modifier: Modifier
+    modifier: Modifier,
+    onMenuClicked: () -> Unit
 ) {
-    Icon(
-        painter = painterResource(id = R.drawable.ic_menu),
-        contentDescription = null,
-        modifier = modifier
-            .size(25.dp)
-            .offset(16.dp)
-    )
+    IconButton(onClick = { onMenuClicked() }) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_menu),
+            contentDescription = null,
+            modifier = modifier
+                .size(25.dp)
+                .offset(8.dp),
+            tint = twitterBlue,
+        )
+    }
 }
 
 @Composable
@@ -75,6 +78,7 @@ fun TimelineIcon(
     Icon(
         painter = painterResource(id = R.drawable.ic_timeline),
         contentDescription = null,
-        modifier = modifier
+        modifier = modifier,
+        tint = twitterBlue
     )
 }

@@ -6,3 +6,10 @@ data class UserModel(
     val followersCount: Int,
     val followingCount: Int
 )
+
+val me = UserModel(
+    "Prateek Sharma",
+    "@prateekSharma",
+    997,
+    23
+)

@@ -3,33 +3,47 @@ package com.example.androiddevchallenge.ui.screens
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.androiddevchallenge.domain.me
 import com.example.androiddevchallenge.ui.composables.Tweet
+import com.example.androiddevchallenge.ui.composables.drawer.NavigationDrawer
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
 import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
+import kotlinx.coroutines.launch
 
 @Composable
 fun TweetsScreen(
     navController: NavController,
     viewModel: TweetsScreenVM = hiltViewModel()
 ) {
+    val scaffoldState = rememberScaffoldState()
+    val scope = rememberCoroutineScope()
+    
     viewModel.loadStories()
     val storiesMutableState = remember { viewModel.storiesState }
     viewModel.loadTweets()
     val tweetsMutableState = remember { viewModel.tweetsState }
 
     Scaffold(
-        topBar = { MainTopAppBar() },
+        topBar = { MainTopAppBar(
+            onMenuClicked = {
+                scope.launch {
+                    scaffoldState.drawerState.open()
+                }
+            }
+        ) },
         backgroundColor = MaterialTheme.colors.background,
+        scaffoldState = scaffoldState,
+        drawerContent = { NavigationDrawer(
+            currentUser = me
+        ) }
     ) {
 
         Column {

@@ -19,7 +19,7 @@ fun CircularImage(
     Image(
         painter = rememberCoilPainter(imageResource) ,
         null,
-        contentScale = ContentScale.FillBounds,
+        contentScale = ContentScale.Crop,
         modifier = modifier
             .size(imageViewSize.dp)
             .clip(

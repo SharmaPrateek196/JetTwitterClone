@@ -6,10 +6,32 @@ object TweetsRepo {
     val tweets = listOf(
 
         TweetModel (
+            id = 0,
+            tweeterName = "Arnav Gupta",
+            handleName = "@championswimmer",
+            timeTweeted = "2m",
+            isVerified = true,
+            tweetText = "If you're asking about Spaces - yes eventually I plan to get there too. \n" +
+                    "\n" +
+                    "We will be calling voice rooms as 'Barns'. \n" +
+                    "\n" +
+                    "It is definitely more aptly named than 'Spaces', because the space is an empty void and doesn't have sound. \n" +
+                    "On the other hand, have you ever visited a barn ?",
+            userImageResource = "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",
+            hasImage = false,
+            imageResource = "",
+            hasVideo = false,
+            videoUrl = "",
+            totalComments = 69,
+            totalRetweets = 131,
+            totalLikes = 93
+        ),
+
+        TweetModel (
             id = 1,
             tweeterName = "Kunal Shah",
             handleName = "@kunalb11",
-            timeTweeted = "6h",
+            timeTweeted = "6m",
             isVerified = true,
             tweetText = "West grew more as inheritance was given to first born by default and other kids had to explore to grow.\n\n Indian lands kept getting divided in small parts due to generational sharing. Indian companies suffer same curse where more people are bothered dividing territory vs expanding.",
             userImageResource = "https://pbs.twimg.com/profile_images/1190747917998546944/D3U5FNa7_400x400.jpg",
@@ -26,7 +48,7 @@ object TweetsRepo {
             id = 2,
             tweeterName = "Microsoft Education",
             handleName = "@MicrosoftEDU",
-            timeTweeted = "2m",
+            timeTweeted = "9m",
             isVerified = true,
             tweetText = "#ISTELive planning tip: use the #MicrosoftEDU agenda to build your own schedule! You'll get an inside look into the brand-new Solutions Hub and learn more about upcoming sessions, activities, and #TeacherPD opportunities: https://msft.it/6019VhWmN",
             userImageResource = "https://pbs.twimg.com/profile_images/1268176956002107392/hXS71f2x_400x400.jpg",
@@ -43,7 +65,7 @@ object TweetsRepo {
             id = 7,
             tweeterName = "Narendra Modi",
             handleName = "@narendramodi",
-            timeTweeted = "9m",
+            timeTweeted = "1h",
             isVerified = true,
             tweetText = "Congratulations to " +
                     "@iiscbangalore" +
@@ -51,7 +73,7 @@ object TweetsRepo {
                     "@iitbombay" +
                     " and " +
                     "@iitdelhi" +
-                    ". Efforts are underway to ensure more universities and institutions of India scale global excellence and support intellectual prowess among the youth. ",
+                    ".\n Efforts are underway to ensure more universities and institutions of India scale global excellence and support intellectual prowess among the youth. ",
             userImageResource = "https://pbs.twimg.com/profile_images/1249934092994375680/xX66NSZP_400x400.jpg",
             hasImage = false,
             imageResource = "",
@@ -66,7 +88,7 @@ object TweetsRepo {
             id = 3,
             tweeterName = "Parimal Ade",
             handleName = "@AdeParimal",
-            timeTweeted = "3h",
+            timeTweeted = "1h",
             isVerified = false,
             tweetText = "Tata Digital acquires majority stake in 1mg. Waiting for Tata Digital IPO..... #investing",
             userImageResource = "https://pbs.twimg.com/profile_images/1249642207931273221/pbygHxfn_400x400.jpg",
@@ -83,7 +105,7 @@ object TweetsRepo {
             id = 4,
             tweeterName = "Ashish Chanchlani",
             handleName = "@ashchanchlani",
-            timeTweeted = "Jun 9",
+            timeTweeted = "2h",
             isVerified = true,
             tweetText = "This tweet is for you sharib bhai @sharibhashmi i am soo proud of you. You are one killer actor. Can't wait to watch more of you.",
             userImageResource = "https://pbs.twimg.com/profile_images/1284149564031762432/1EnB9vtz_400x400.jpg",
@@ -100,7 +122,7 @@ object TweetsRepo {
             id = 5,
             tweeterName = "Satya Nadella",
             handleName = "@satyanadella",
-            timeTweeted = "4m",
+            timeTweeted = "4h",
             isVerified = true,
             tweetText = "Gaming is fundamentally aligned with our mission as a company. Great to chat with " +
                     "@XboxP3" +
@@ -142,7 +164,7 @@ object TweetsRepo {
             id = 8,
             tweeterName = "Priyanka Chopra",
             handleName = "@priyankachopra",
-            timeTweeted = "7h",
+            timeTweeted = "9 Jun",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",
             userImageResource = "https://pbs.twimg.com/profile_images/1356538427529904128/O_WwpJrT_400x400.jpg",
@@ -159,7 +181,7 @@ object TweetsRepo {
             id = 1,
             tweeterName = "Kunal Shah",
             handleName = "@kunalb11",
-            timeTweeted = "6h",
+            timeTweeted = "9h",
             isVerified = true,
             tweetText = "West grew more as inheritance was given to first born by default and other kids had to explore to grow. Indian lands kept getting divided in small parts due to generational sharing.\n\n Indian companies suffer same curse where more people are bothered dividing territory vs expanding.",
             userImageResource = "https://pbs.twimg.com/profile_images/1190747917998546944/D3U5FNa7_400x400.jpg",
