@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.androiddevchallenge.TwitterApplication
@@ -36,7 +37,7 @@ fun TweetsScreen(
     val tweetsMutableState = remember { viewModel.tweetsState }
 
     TwitterTheme(
-        darkTheme = baseApplication.isGlobalDarkTheme.value
+        darkTheme = baseApplication.isGlobalDarkTheme.value,
     ) {
         Scaffold(
             topBar = { MainTopAppBar(
@@ -46,7 +47,7 @@ fun TweetsScreen(
                     }
                 }
             ) },
-            backgroundColor = MaterialTheme.colors.background,
+            drawerBackgroundColor = MaterialTheme.colors.primary,
             scaffoldState = scaffoldState,
             drawerContent = { NavigationDrawer(
                 currentUser = me,

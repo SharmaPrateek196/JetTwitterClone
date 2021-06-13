@@ -25,17 +25,17 @@ import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import com.example.androiddevchallenge.ui.theme.grey
 import com.example.androiddevchallenge.ui.theme.myProfilePictureUrl
 import com.example.androiddevchallenge.ui.theme.twitterBlue
+import com.example.androiddevchallenge.utils.Screens
 
 private val drawerOptions = listOf(
-    DrawerOptions.Profile,
-    DrawerOptions.Lists,
-    DrawerOptions.Topics,
-    DrawerOptions.Bookmarks,
-    DrawerOptions.Moments,
-    DrawerOptions.SettingsAndPrivacy,
-    DrawerOptions.HelpCentre
+    Screens.DrawerOptions.Profile,
+    Screens.DrawerOptions.Lists,
+    Screens.DrawerOptions.Topics,
+    Screens.DrawerOptions.Bookmarks,
+    Screens.DrawerOptions.Moments,
+    Screens.DrawerOptions.SettingsAndPrivacy,
+    Screens.DrawerOptions.HelpCentre
 )
-
 
 @Composable
 fun NavigationDrawer(
@@ -236,14 +236,4 @@ fun QRIcon() {
             .wrapContentWidth(Alignment.End)
             .padding(end = 16.dp)
     )
-}
-
-sealed class DrawerOptions(val hasIcon: Boolean, @DrawableRes val iconResource: Int, val title: String, val route: String) {
-    object Profile : DrawerOptions(true, R.drawable.ic_person, "Profile", "profile")
-    object Lists : DrawerOptions(true, R.drawable.ic_lists, "Lists", "lists")
-    object Topics : DrawerOptions( true, R.drawable.ic_topics, "Topics", "topics")
-    object Bookmarks : DrawerOptions( true, R.drawable.ic_bookmark, "Bookmarks", "bookmarks")
-    object Moments : DrawerOptions( true, R.drawable.ic_moments, "Moments", "moments")
-    object SettingsAndPrivacy : DrawerOptions( false, 0,"Settings And Privacy", "settings_and_privacy")
-    object HelpCentre : DrawerOptions( false, 0, "Help Centre", "help_centre")
 }

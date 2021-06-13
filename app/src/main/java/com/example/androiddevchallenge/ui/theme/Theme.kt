@@ -37,11 +37,11 @@ private val LightColorPalette = lightColors(
 )
 
 private val DarkColorPalette = darkColors(
-    primary = Color.Black,
-    primaryVariant = Color.Black,
+    primary = darkThemeBg,
+    primaryVariant = darkThemeBg,
     secondary = twitterBlue,
-    background = Color.Black,
-    surface = Color.Black,
+    background = darkThemeBg,
+    surface = darkThemeBg,
     onPrimary = white50,
     onSecondary = white50,
     onBackground = white50,
