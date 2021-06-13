@@ -1,6 +1,5 @@
 package com.example.androiddevchallenge.ui.screens.tweetsscreen
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,27 +17,27 @@ import javax.inject.Inject
 @HiltViewModel
 class TweetsScreenVM @Inject constructor(): ViewModel() {
 
-    private val _tweetState2 = MutableLiveData<TweetsListState>()
-    val tweetState2: LiveData<TweetsListState> = _tweetState2
+    private val _tweetState = MutableLiveData<TweetsListState>()
+    val tweetState: LiveData<TweetsListState> = _tweetState
 
-    private val _storiesState2 = MutableLiveData<StoriesListState>()
-    val storiesState2: LiveData<StoriesListState> = _storiesState2
+    private val _storiesState = MutableLiveData<StoriesListState>()
+    val storiesState: LiveData<StoriesListState> = _storiesState
 
     fun loadTweets() {
         viewModelScope.launch {
-            _tweetState2.value = TweetsListState.Loading
+            _tweetState.value = TweetsListState.Loading
             delay(300)
             val result = TweetsRepo.tweets
-            _tweetState2.value = TweetsListState.Success(result)
+            _tweetState.value = TweetsListState.Success(result)
         }
     }
 
     fun loadStories() {
         viewModelScope.launch {
-            _storiesState2.value = StoriesListState.Loading
+            _storiesState.value = StoriesListState.Loading
             delay(300)
             val result = StoriesRepo.stories
-            _storiesState2.value = StoriesListState.Success(result)
+            _storiesState.value = StoriesListState.Success(result)
         }
     }
 

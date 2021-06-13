@@ -1,10 +1,10 @@
-package com.example.androiddevchallenge.ui.screens.searchscreen
+package com.example.androiddevchallenge.utils
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchScreenVM @Inject constructor(): ViewModel() {
+class BottomNavVM @Inject constructor(): ViewModel() {
 
 }

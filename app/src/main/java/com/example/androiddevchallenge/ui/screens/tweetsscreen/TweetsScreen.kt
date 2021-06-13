@@ -7,9 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.me
 import com.example.androiddevchallenge.ui.composables.Tweet
@@ -20,52 +18,46 @@ import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
 import com.example.androiddevchallenge.ui.theme.TwitterTheme
+import com.example.androiddevchallenge.utils.BottomNavVM
+import com.example.androiddevchallenge.utils.TwitterScaffold
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @Composable
 fun TweetsScreen(
-    navController: NavController,
-    viewModel: TweetsScreenVM = hiltViewModel(),
+    tweetsScreenViewModel: TweetsScreenVM = hiltViewModel(),
+    bottomNavViewModel: BottomNavVM = hiltViewModel() ,
     baseApplication: TwitterApplication
 ) {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
 
-    viewModel.loadStories()
-    viewModel.loadTweets()
+    tweetsScreenViewModel.loadStories()
+    tweetsScreenViewModel.loadTweets()
 
-    val storiesMutableState2: StoriesListState by viewModel.storiesState2.observeAsState(StoriesListState.Loading)
-    val tweetsMutableState2: TweetsListState by viewModel.tweetState2.observeAsState(TweetsListState.Loading)
+    val storiesMutableState: StoriesListState by tweetsScreenViewModel.storiesState.observeAsState(StoriesListState.Loading)
+    val tweetsMutableState: TweetsListState by tweetsScreenViewModel.tweetState.observeAsState(TweetsListState.Loading)
 
     TwitterTheme(
         darkTheme = baseApplication.isGlobalDarkTheme.value,
     ) {
-        Scaffold(
+        TwitterScaffold(
+            baseApplication = baseApplication,
+            scaffoldState = scaffoldState,
             topBar = { MainTopAppBar(
                 onMenuClicked = {
                     scope.launch {
                         scaffoldState.drawerState.open()
                     }
                 }
-            ) },
-            drawerBackgroundColor = MaterialTheme.colors.primary,
-            scaffoldState = scaffoldState,
-            drawerContent = { NavigationDrawer(
-                currentUser = me,
-                onThemeChanged = {
-                    baseApplication.onThemeChanged()
-                },
-                baseApplication
             ) }
-        ) {
+        ){
 
             Column {
-                StoriesList(storiesMutableState2)
+                StoriesList(storiesMutableState)
 
                 Divider()
 
-                TweetsList(tweetsMutableState2)
+                TweetsList(tweetsMutableState)
             }
         }
     }

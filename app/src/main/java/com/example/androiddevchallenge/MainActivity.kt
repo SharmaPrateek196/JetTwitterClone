@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
             ) {
                 composable("tweets_Screen") {
                     TweetsScreen(
-                        navController = navController,
                         baseApplication = baseApplication
                     )
                 }
