@@ -22,6 +22,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.TwitterApplication
 
 private val LightColorPalette = lightColors(
     primary = white50,
@@ -29,18 +30,18 @@ private val LightColorPalette = lightColors(
     secondary = twitterBlue,
     background = white50,
     surface = white50,
-    onPrimary = black800,
-    onSecondary = black800,
-    onBackground = black800,
-    onSurface = black800
+    onPrimary = Color.Black,
+    onSecondary = Color.Black,
+    onBackground = Color.Black,
+    onSurface = Color.Black
 )
 
 private val DarkColorPalette = darkColors(
-    primary = black800,
-    primaryVariant = black800,
+    primary = Color.Black,
+    primaryVariant = Color.Black,
     secondary = twitterBlue,
-    background = black800,
-    surface = black800,
+    background = Color.Black,
+    surface = Color.Black,
     onPrimary = white50,
     onSecondary = white50,
     onBackground = white50,
@@ -48,7 +49,10 @@ private val DarkColorPalette = darkColors(
 )
 
 @Composable
-fun TwitterTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+fun TwitterTheme(
+    darkTheme: Boolean,
+    content: @Composable() () -> Unit
+) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {

@@ -9,15 +9,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
+import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.UserModel
 import com.example.androiddevchallenge.ui.composables.image.CircularImage
 import com.example.androiddevchallenge.ui.composables.text.UserHandleText
 import com.example.androiddevchallenge.ui.composables.text.UserNameBold
+import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import com.example.androiddevchallenge.ui.theme.grey
 import com.example.androiddevchallenge.ui.theme.myProfilePictureUrl
 import com.example.androiddevchallenge.ui.theme.twitterBlue
@@ -35,55 +39,64 @@ private val drawerOptions = listOf(
 
 @Composable
 fun NavigationDrawer(
-    currentUser: UserModel
+    currentUser: UserModel,
+    onThemeChanged: () -> Unit,
+    baseApplication: TwitterApplication
 ) {
-    Column {
-        Column(
-            Modifier.padding(start = 16.dp)
-        ) {
-            Spacer(modifier = Modifier.height(12.dp))
+    TwitterTheme(
+        darkTheme = baseApplication.isGlobalDarkTheme.value
+    ) {
+        Column {
+            Column(
+                Modifier.padding(start = 16.dp)
+            ) {
+                Spacer(modifier = Modifier.height(12.dp))
 
-            CircularImage(
-                imageResource = myProfilePictureUrl,
-                modifier = Modifier,
-                imageViewSize = 55
+                CircularImage(
+                    imageResource = myProfilePictureUrl,
+                    modifier = Modifier,
+                    imageViewSize = 55
+                )
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                UserNameBold(
+                    name = currentUser.username,
+                    fontSize = 16.sp
+                )
+
+                Spacer(modifier = Modifier.height(4.dp))
+
+                UserHandleText(
+                    handleName = currentUser.userHandle,
+                    fontSize = 16.sp,
+                    modifier = Modifier
+                )
+
+                Spacer(modifier = Modifier.height(15.dp))
+
+                FollowersAndFollowingRow(
+                    currentUser
+                )
+
+                Spacer(modifier = Modifier.height(15.dp))
+            }
+
+            Divider()
+
+            DrawerOptionsList(baseApplication)
+
+            DrawerFooter(
+                onThemeChanged
             )
-
-            Spacer(modifier = Modifier.height(12.dp))
-
-            UserNameBold(
-                name = currentUser.username,
-                fontSize = 16.sp
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            UserHandleText(
-                handleName = currentUser.userHandle,
-                fontSize = 16.sp,
-                modifier = Modifier
-            )
-
-            Spacer(modifier = Modifier.height(15.dp))
-
-            FollowersAndFollowingRow(
-                currentUser
-            )
-
-            Spacer(modifier = Modifier.height(15.dp))
         }
-
-        Divider()
-
-        DrawerOptionsList()
-
-        DrawerFooter()
     }
 }
 
-@Preview
 @Composable
-fun DrawerFooter() {
+fun DrawerFooter(
+    onThemeChanged: () -> Unit
+) {
     Column(
         Modifier.height(200.dp)
     ) {
@@ -95,15 +108,17 @@ fun DrawerFooter() {
                 .padding(top = 3.dp, bottom = 3.dp)
         ) {
             Box(
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
                     .wrapContentWidth(Alignment.Start)
             ) {
-                ThemeChangeIcon {
-                    //TODO
-                }
+                ThemeChangeIcon (
+                    onThemeChanged
+                )
             }
             Box(
-                modifier = Modifier.weight(1f)
+                modifier = Modifier
+                    .weight(1f)
                     .wrapContentWidth(Alignment.End)
             ) {
                 QRIcon()
@@ -148,19 +163,22 @@ fun FollowersAndFollowingRow(
 }
 
 @Composable
-fun DrawerOptionsList() {
+fun DrawerOptionsList(baseApplication: TwitterApplication) {
     LazyColumn {
         items(drawerOptions) { drawerOption ->
             key(drawerOption.title) {
-                NavigationOptionRow(
-                    hasIcon = drawerOption.hasIcon,
-                    iconResource = drawerOption.iconResource,
-                    optionText = drawerOption.title
-                )
+                TwitterTheme(darkTheme = baseApplication.isGlobalDarkTheme.value) {
+                    NavigationOptionRow(
+                        hasIcon = drawerOption.hasIcon,
+                        iconResource = drawerOption.iconResource,
+                        optionText = drawerOption.title
+                    )
 
-                if (drawerOption.title == "Moments") {
-                    Divider()
+                    if (drawerOption.title == "Moments") {
+                        Divider()
+                    }
                 }
+
             }
         }
     }
@@ -185,7 +203,8 @@ fun NavigationOptionRow(
         }
         Text(
             text = optionText,
-            fontSize = 16.sp
+            fontSize = 16.sp,
+            color = MaterialTheme.colors.onPrimary
         )
     }
 }
@@ -194,7 +213,8 @@ fun NavigationOptionRow(
 fun ThemeChangeIcon(onThemeChanged: () -> Unit) {
     IconButton(
         onClick = onThemeChanged,
-        modifier = Modifier.wrapContentWidth(Alignment.Start)
+        modifier = Modifier
+            .wrapContentWidth(Alignment.Start)
             .padding(start = 2.dp)
     ) {
         Icon(

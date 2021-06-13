@@ -8,6 +8,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.me
 import com.example.androiddevchallenge.ui.composables.Tweet
 import com.example.androiddevchallenge.ui.composables.drawer.NavigationDrawer
@@ -16,44 +17,53 @@ import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
+import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @Composable
 fun TweetsScreen(
     navController: NavController,
-    viewModel: TweetsScreenVM = hiltViewModel()
+    viewModel: TweetsScreenVM = hiltViewModel(),
+    baseApplication: TwitterApplication
 ) {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    
+
     viewModel.loadStories()
     val storiesMutableState = remember { viewModel.storiesState }
     viewModel.loadTweets()
     val tweetsMutableState = remember { viewModel.tweetsState }
 
-    Scaffold(
-        topBar = { MainTopAppBar(
-            onMenuClicked = {
-                scope.launch {
-                    scaffoldState.drawerState.open()
-                }
-            }
-        ) },
-        backgroundColor = MaterialTheme.colors.background,
-        scaffoldState = scaffoldState,
-        drawerContent = { NavigationDrawer(
-            currentUser = me
-        ) }
+    TwitterTheme(
+        darkTheme = baseApplication.isGlobalDarkTheme.value
     ) {
+        Scaffold(
+            topBar = { MainTopAppBar(
+                onMenuClicked = {
+                    scope.launch {
+                        scaffoldState.drawerState.open()
+                    }
+                }
+            ) },
+            backgroundColor = MaterialTheme.colors.background,
+            scaffoldState = scaffoldState,
+            drawerContent = { NavigationDrawer(
+                currentUser = me,
+                onThemeChanged = {
+                    baseApplication.onThemeChanged()
+                },
+                baseApplication
+            ) }
+        ) {
 
-        Column {
-            StoriesList(storiesMutableState.value)
+            Column {
+                StoriesList(storiesMutableState.value)
 
-            Divider(
-                color = MaterialTheme.colors.onPrimary
-            )
+                Divider()
 
-            TweetsList(tweetsMutableState.value)
+                TweetsList(tweetsMutableState.value)
+            }
         }
     }
 }

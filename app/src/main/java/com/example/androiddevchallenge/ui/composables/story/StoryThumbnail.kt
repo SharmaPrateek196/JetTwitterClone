@@ -76,7 +76,7 @@ fun StorySeenThumbnail(
         Image(
             painter = rememberCoilPainter(storyModel.url),
             null,
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(imageViewSize.dp)
                 .clip(

@@ -16,7 +16,6 @@ import com.example.androiddevchallenge.ui.theme.twitterBlue
 fun MainTopAppBar(
     onMenuClicked: () -> Unit
 ) {
-    Surface {
         TopAppBar(
             title = { TwitterIcon(Modifier) },
             navigationIcon = {
@@ -26,7 +25,6 @@ fun MainTopAppBar(
                 ) },
             elevation = 0.dp
         )
-    }
 }
 
 @Composable
@@ -78,7 +76,7 @@ fun TimelineIcon(
     Icon(
         painter = painterResource(id = R.drawable.ic_timeline),
         contentDescription = null,
-        modifier = modifier,
+        modifier = modifier.size(24.dp),
         tint = twitterBlue
     )
 }

@@ -37,7 +37,7 @@ fun Like(
                     contentDescription = null,
                     modifier = Modifier.size(tweetActionItemsWidth-1.dp, tweetActionItemsHeight-1.dp)
                 )
-                Spacer(modifier = Modifier.width(2.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = totalLikes.toString(),
                     style = TextStyle(

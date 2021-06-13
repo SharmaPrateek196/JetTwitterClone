@@ -12,9 +12,14 @@ import com.example.androiddevchallenge.ui.screens.TweetsScreen
 import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var baseApplication: TwitterApplication
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -26,17 +31,17 @@ class MainActivity : AppCompatActivity() {
                 darkIcons = useDarkIcons
             )
 
-            TwitterTheme {
-                val navController = rememberNavController()
-                NavHost(
-                    navController = navController,
-                    startDestination = "tweets_Screen"
-                ) {
-                    composable("tweets_Screen") {
-                        TweetsScreen(navController = navController)
-                    }
+            val navController = rememberNavController()
+            NavHost(
+                navController = navController,
+                startDestination = "tweets_Screen"
+            ) {
+                composable("tweets_Screen") {
+                    TweetsScreen(
+                        navController = navController,
+                        baseApplication = baseApplication
+                    )
                 }
-
             }
         }
     }

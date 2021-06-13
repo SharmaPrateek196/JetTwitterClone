@@ -37,7 +37,7 @@ fun Retweet(
                     contentDescription = null,
                     modifier = Modifier.size(tweetActionItemsWidth, tweetActionItemsHeight)
                 )
-                Spacer(modifier = Modifier.width(2.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = totalRetweets.toString(),
                     style = TextStyle(
