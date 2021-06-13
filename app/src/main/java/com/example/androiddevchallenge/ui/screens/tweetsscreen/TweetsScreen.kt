@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -32,9 +33,10 @@ fun TweetsScreen(
     val scope = rememberCoroutineScope()
 
     viewModel.loadStories()
-    val storiesMutableState = remember { viewModel.storiesState }
     viewModel.loadTweets()
-    val tweetsMutableState = remember { viewModel.tweetsState }
+
+    val storiesMutableState2: StoriesListState by viewModel.storiesState2.observeAsState(StoriesListState.Loading)
+    val tweetsMutableState2: TweetsListState by viewModel.tweetState2.observeAsState(TweetsListState.Loading)
 
     TwitterTheme(
         darkTheme = baseApplication.isGlobalDarkTheme.value,
@@ -59,11 +61,11 @@ fun TweetsScreen(
         ) {
 
             Column {
-                StoriesList(storiesMutableState.value)
+                StoriesList(storiesMutableState2)
 
                 Divider()
 
-                TweetsList(tweetsMutableState.value)
+                TweetsList(tweetsMutableState2)
             }
         }
     }
