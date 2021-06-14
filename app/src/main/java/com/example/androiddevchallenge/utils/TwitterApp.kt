@@ -21,26 +21,12 @@ fun TwitterApp(
     bottomNavVM: BottomNavVM = hiltViewModel()
 ) {
     val navController = rememberNavController()
-    val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
-    val hasSearchBar = remember { mutableStateOf(true) }
 
     TwitterTheme(
         darkTheme = baseApplication.isGlobalDarkTheme.value
     ) {
         TwitterScaffold(
             baseApplication = baseApplication,
-            topBar = {
-                TwitterTopAppBar(
-                    onMenuClicked = {
-                        scope.launch {
-                            scaffoldState.drawerState.open()
-                        }
-                    },
-                    hasSearchBar = hasSearchBar.value
-                )
-            },
-            scaffoldState = scaffoldState,
             bottomBar = {
                 BottomBar(
                     navController = navController,
