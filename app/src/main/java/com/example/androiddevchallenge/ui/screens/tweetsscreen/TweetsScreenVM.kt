@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.ui.screens.tweetsscreen
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +24,13 @@ class TweetsScreenVM @Inject constructor(): ViewModel() {
     private val _storiesState = MutableLiveData<StoriesListState>()
     val storiesState: LiveData<StoriesListState> = _storiesState
 
+    init {
+        loadStories()
+        loadTweets()
+    }
+
     fun loadTweets() {
+        Log.d("TAG", "loadTweets: ")
         viewModelScope.launch {
             _tweetState.value = TweetsListState.Loading
             delay(300)
@@ -33,6 +40,7 @@ class TweetsScreenVM @Inject constructor(): ViewModel() {
     }
 
     fun loadStories() {
+        Log.d("TAG", "loadStories: ")
         viewModelScope.launch {
             _storiesState.value = StoriesListState.Loading
             delay(300)

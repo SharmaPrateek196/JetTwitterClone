@@ -86,12 +86,16 @@ object TweetsRepo {
 
         TweetModel (
             id = 3,
-            tweeterName = "Parimal Ade",
-            handleName = "@AdeParimal",
+            tweeterName = "Asif",
+            handleName = "@Asifiiitm",
             timeTweeted = "1h",
             isVerified = false,
-            tweetText = "Tata Digital acquires majority stake in 1mg. Waiting for Tata Digital IPO..... #investing",
-            userImageResource = "https://pbs.twimg.com/profile_images/1249642207931273221/pbygHxfn_400x400.jpg",
+            tweetText = "Am I worthy? A thread\n" +
+                    "\n" +
+                    "I received a few messages that go like \"is my resume worthy\" or \"am I worthy to be referred\".\n" +
+                    "\n" +
+                    "Initially, I ignored this keyword thinking as a one-off case, but this became a repeated occurrence, so I think I need to address this.",
+            userImageResource = "https://pbs.twimg.com/profile_images/1312772267043024896/uIGT2DlQ_400x400.jpg",
             hasImage = false,
             imageResource = "",
             hasVideo = false,
@@ -167,7 +171,7 @@ object TweetsRepo {
             timeTweeted = "9 Jun",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",
-            userImageResource = "https://pbs.twimg.com/profile_images/1356538427529904128/O_WwpJrT_400x400.jpg",
+            userImageResource = "https://pbs.twimg.com/profile_images/1403400684226052098/ZJ4cQ2Bb_400x400.jpg",
             hasImage = true,
             imageResource = "https://pbs.twimg.com/media/E3hCo23UYAAyTSk?format=jpg&name=large",
             hasVideo = false,
@@ -232,23 +236,6 @@ object TweetsRepo {
             totalComments = 872,
             totalRetweets = 909,
             totalLikes = 1200
-        ),
-
-        TweetModel (
-            id = 3,
-            tweeterName = "Parimal Ade",
-            handleName = "@AdeParimal",
-            timeTweeted = "3h",
-            isVerified = false,
-            tweetText = "Tata Digital acquires majority stake in 1mg. Waiting for Tata Digital IPO..... #investing",
-            userImageResource = "https://pbs.twimg.com/profile_images/1249642207931273221/pbygHxfn_400x400.jpg",
-            hasImage = false,
-            imageResource = "",
-            hasVideo = false,
-            videoUrl = "",
-            totalComments = 42,
-            totalRetweets = 83,
-            totalLikes = 98
         ),
 
         TweetModel (
@@ -317,7 +304,7 @@ object TweetsRepo {
             timeTweeted = "7h",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",
-            userImageResource = "https://pbs.twimg.com/profile_images/1356538427529904128/O_WwpJrT_400x400.jpg",
+            userImageResource = "https://pbs.twimg.com/profile_images/1403400684226052098/ZJ4cQ2Bb_400x400.jpg",
             hasImage = true,
             imageResource = "https://pbs.twimg.com/media/E3hCo23UYAAyTSk?format=jpg&name=large",
             hasVideo = false,

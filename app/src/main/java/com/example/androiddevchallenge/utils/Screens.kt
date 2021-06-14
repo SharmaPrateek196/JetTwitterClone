@@ -24,3 +24,10 @@ sealed class Screens(val hasIcon: Boolean, @DrawableRes val iconResource: Int, v
         object HelpCentre : DrawerOptions( false, 0, "Help Centre", "help_centre")
     }
 }
+
+val bottomNavScreensList = listOf(
+    Screens.BottomNavScreens.Home,
+    Screens.BottomNavScreens.Search,
+    Screens.BottomNavScreens.Notifications,
+    Screens.BottomNavScreens.Messages
+)

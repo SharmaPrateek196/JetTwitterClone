@@ -5,11 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.androiddevchallenge.ui.screens.TweetsScreen
-import com.example.androiddevchallenge.ui.theme.TwitterTheme
+import com.example.androiddevchallenge.utils.TwitterApp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -31,17 +27,9 @@ class MainActivity : AppCompatActivity() {
                 darkIcons = useDarkIcons
             )
 
-            val navController = rememberNavController()
-            NavHost(
-                navController = navController,
-                startDestination = "tweets_Screen"
-            ) {
-                composable("tweets_Screen") {
-                    TweetsScreen(
-                        baseApplication = baseApplication
-                    )
-                }
-            }
+            TwitterApp(
+                baseApplication = baseApplication
+            )
         }
     }
 }

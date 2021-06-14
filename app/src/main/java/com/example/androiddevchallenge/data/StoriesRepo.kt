@@ -30,7 +30,7 @@ object StoriesRepo {
         "Ankur"
         ),
         StoryModel(
-            "https://pbs.twimg.com/profile_images/1356538427529904128/O_WwpJrT_400x400.jpg",
+            "https://pbs.twimg.com/profile_images/1403400684226052098/ZJ4cQ2Bb_400x400.jpg",
             "Priyanka"
         ),
         StoryModel(
@@ -40,6 +40,10 @@ object StoriesRepo {
         StoryModel(
             "https://pbs.twimg.com/profile_images/1190747917998546944/D3U5FNa7_400x400.jpg",
             "Kunal"
+        ),
+        StoryModel(
+            "https://pbs.twimg.com/profile_images/1312772267043024896/uIGT2DlQ_400x400.jpg",
+            "Asif"
         ),
         StoryModel(
             "https://pbs.twimg.com/profile_images/1367916362904051717/BiBmSNVI_400x400.jpg",

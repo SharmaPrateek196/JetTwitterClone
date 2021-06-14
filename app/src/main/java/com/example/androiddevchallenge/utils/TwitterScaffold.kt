@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
+import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.me
@@ -16,6 +17,7 @@ fun TwitterScaffold(
     baseApplication: TwitterApplication,
     scaffoldState: ScaffoldState,
     topBar: @Composable () -> Unit,
+    bottomBar: @Composable () -> Unit,
     content: @Composable ((PaddingValues) -> Unit)
 ) {
     TwitterTheme(
@@ -34,6 +36,7 @@ fun TwitterScaffold(
                     baseApplication
                 )
             },
+            bottomBar = bottomBar,
             content = content
         )
     }

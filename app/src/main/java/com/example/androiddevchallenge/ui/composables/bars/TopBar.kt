@@ -11,8 +11,9 @@ import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.twitterBlue
 
 @Composable
-fun TweetsScreenAppBar(
-    onMenuClicked: () -> Unit
+fun TwitterTopAppBar(
+    onMenuClicked: () -> Unit,
+    hasSearchBar: Boolean = false
 ) {
     TopAppBar(
         elevation = 0.dp

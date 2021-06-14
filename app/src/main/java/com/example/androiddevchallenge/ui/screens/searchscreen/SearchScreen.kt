@@ -1,38 +1,27 @@
 package com.example.androiddevchallenge.ui.screens.searchscreen
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import com.example.androiddevchallenge.utils.BottomNavVM
+import com.example.androiddevchallenge.utils.Screens
 import com.example.androiddevchallenge.utils.TwitterScaffold
 
 @Composable
 fun SearchScreen(
     searchScreenViewModel: SearchScreenVM = hiltViewModel(),
-    bottomNavViewModel: BottomNavVM = hiltViewModel(),
-    baseApplication: TwitterApplication
+    bottomNavViewModel: BottomNavVM
 ) {
-    val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
+    bottomNavViewModel.setCurrentScreen(Screens.BottomNavScreens.Search)
 
-    TwitterTheme(
-        darkTheme = baseApplication.isGlobalDarkTheme.value
-    ) {
-        TwitterScaffold(
-            baseApplication = baseApplication,
-            scaffoldState = scaffoldState,
-            topBar = { /*TODO*/ }
-        ) {
-
-
-
-
-
-        }
+    Column {
+        Text(text = "SearchScreen", Modifier.fillMaxSize())
     }
-
-
 }
