@@ -11,7 +11,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.ui.composables.Tweet
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
-import com.example.androiddevchallenge.ui.composables.topbar.TweetsScreenAppBar
+import com.example.androiddevchallenge.ui.composables.bars.TweetsScreenAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
