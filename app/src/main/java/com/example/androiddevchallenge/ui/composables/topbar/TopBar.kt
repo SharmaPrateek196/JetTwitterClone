@@ -17,12 +17,6 @@ fun TweetsScreenAppBar(
     onMenuClicked: () -> Unit
 ) {
     TopAppBar(
-//            title = { TwitterIcon(Modifier) },
-//            navigationIcon = {
-//                MenuIcon(
-//                    Modifier,
-//                    onMenuClicked
-//                ) },
         elevation = 0.dp
     ) {
         Row (
@@ -57,58 +51,4 @@ fun TweetsScreenAppBar(
             )
         }
     }
-}
-
-@Composable
-fun TwitterIcon(
-    modifier: Modifier
-) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-        Icon(
-            painter = painterResource(id = R.drawable.ic_twitter),
-            contentDescription = null,
-            modifier = modifier
-                .padding(16.dp)
-                .align(Alignment.Center)
-                .offset((-25).dp),
-            tint = twitterBlue
-        )
-        TimelineIcon(
-            modifier = Modifier
-                .align(Alignment.CenterEnd)
-                .padding(end = 16.dp)
-        )
-    }
-}
-
-@Composable
-fun MenuIcon(
-    modifier: Modifier,
-    onMenuClicked: () -> Unit
-) {
-    IconButton(onClick = { onMenuClicked() }) {
-        Icon(
-            painter = painterResource(id = R.drawable.ic_menu),
-            contentDescription = null,
-            modifier = modifier
-                .size(25.dp)
-                .offset(8.dp),
-            tint = twitterBlue,
-        )
-    }
-}
-
-@Composable
-fun TimelineIcon(
-    modifier: Modifier
-) {
-    Icon(
-        painter = painterResource(id = R.drawable.ic_timeline),
-        contentDescription = null,
-        modifier = modifier.size(24.dp),
-        tint = twitterBlue
-    )
 }
