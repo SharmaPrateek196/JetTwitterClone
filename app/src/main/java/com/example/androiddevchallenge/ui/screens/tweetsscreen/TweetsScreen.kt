@@ -9,11 +9,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.androiddevchallenge.TwitterApplication
-import com.example.androiddevchallenge.domain.me
 import com.example.androiddevchallenge.ui.composables.Tweet
-import com.example.androiddevchallenge.ui.composables.drawer.NavigationDrawer
 import com.example.androiddevchallenge.ui.composables.story.StoryPalette
-import com.example.androiddevchallenge.ui.composables.topbar.MainTopAppBar
+import com.example.androiddevchallenge.ui.composables.topbar.TweetsScreenAppBar
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
 import com.example.androiddevchallenge.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
@@ -43,7 +41,7 @@ fun TweetsScreen(
         TwitterScaffold(
             baseApplication = baseApplication,
             scaffoldState = scaffoldState,
-            topBar = { MainTopAppBar(
+            topBar = { TweetsScreenAppBar(
                 onMenuClicked = {
                     scope.launch {
                         scaffoldState.drawerState.open()
