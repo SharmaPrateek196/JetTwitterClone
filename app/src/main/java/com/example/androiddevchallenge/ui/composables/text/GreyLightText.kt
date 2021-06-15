@@ -1,6 +1,5 @@
 package com.example.androiddevchallenge.ui.composables.text
 
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,13 +11,13 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.grey
 
 @Composable
-fun UserHandleText(
-    handleName: String,
+fun GreyLightText(
+    text: String,
     fontSize: TextUnit,
     modifier: Modifier
 ) {
     Text(
-        text = handleName,
+        text = text,
         style = TextStyle(
             color = grey,
             fontSize = fontSize,
@@ -32,8 +31,8 @@ fun UserHandleText(
 @Preview
 @Composable
 fun UserHandleTextPreview() {
-    UserHandleText(
-        handleName = "@prateekSharma",
+    GreyLightText(
+        text = "@prateekSharma",
         fontSize = 12.sp,
         modifier = Modifier
     )

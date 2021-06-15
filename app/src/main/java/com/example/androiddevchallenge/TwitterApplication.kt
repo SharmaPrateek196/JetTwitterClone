@@ -7,7 +7,7 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class TwitterApplication : Application() {
     // Should be saved in SharedPreferences or Local DB in a production app
-    var isGlobalDarkTheme = mutableStateOf(false)
+    var isGlobalDarkTheme = mutableStateOf(true)
 
     fun onThemeChanged() {
         isGlobalDarkTheme.value = !isGlobalDarkTheme.value

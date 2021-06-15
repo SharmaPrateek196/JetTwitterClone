@@ -1,27 +1,22 @@
 package com.example.androiddevchallenge.ui.composables.text
 
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.example.androiddevchallenge.ui.theme.blackLessDark
-import com.example.androiddevchallenge.ui.theme.grey
-import com.example.androiddevchallenge.ui.theme.purple700
 
 @Composable
-fun UserNameBold(
-    name: String,
+fun BoldText(
+    text: String,
     fontSize: TextUnit
 ) {
     Text(
-        text = name,
+        text = text,
         style = TextStyle(
             color = MaterialTheme.colors.onPrimary,
             fontSize = fontSize,
@@ -35,5 +30,5 @@ fun UserNameBold(
 @Preview
 @Composable
 fun UserNameBoldPreview() {
-    UserNameBold(name = "Prateek Sharma", 12.sp)
+    BoldText(text = "Prateek Sharma", 12.sp)
 }

@@ -6,6 +6,7 @@ import androidx.compose.animation.core.TweenSpec
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
@@ -46,12 +47,12 @@ fun SearchScreen(
 
         Crossfade(currentCategory, animationSpec = tweenSpec) { category ->
             when (category) {
-                SearchCategory.ForYou -> ForYouLayout(forYouMutableState)
-                SearchCategory.Covid -> Text(text = "covid")//CovidLayout(topChartsData)
-                SearchCategory.Trending -> Text(text = "trending")//TrendingLayout()
-                SearchCategory.News -> Text(text = "news")//NewsLayout()
-                SearchCategory.Sports -> Text(text = "sports")//SportsLayout()
-                SearchCategory.Entertainment -> Text(text = "entertainment")//EntertainmentLayout()
+                SearchCategory.ForYou -> Surface { ForYouLayout(forYouMutableState) }
+                SearchCategory.Covid -> Surface {Text(text = "Covid Screen - Under Construction")}
+                SearchCategory.Trending -> Surface {Text(text = "Trending Screen - Under Construction")}
+                SearchCategory.News -> Surface {Text(text = "News Screen - Under Construction")}
+                SearchCategory.Sports -> Surface {Text(text = "Sports Screen - Under Construction")}
+                SearchCategory.Entertainment -> Surface {Text(text = "Entertainment Screen - Under Construction") }
             }
         }
     }

@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.domain.MessageModel
 import com.example.androiddevchallenge.ui.composables.image.CircularImage
-import com.example.androiddevchallenge.ui.composables.text.UserHandleText
-import com.example.androiddevchallenge.ui.composables.text.UserNameBold
+import com.example.androiddevchallenge.ui.composables.text.GreyLightText
+import com.example.androiddevchallenge.ui.composables.text.BoldText
 import com.example.androiddevchallenge.ui.theme.*
 
 @Composable
@@ -50,7 +50,7 @@ fun Message(
                 )
             ) {
                 Row(Modifier.height(IntrinsicSize.Max)) {
-                    UserNameBold(name = message.username, fontSize = usernameSize)
+                    BoldText(text = message.username, fontSize = usernameSize)
                     if (message.isVerified) {
                         Image(
                             painter = painterResource(R.drawable.ic_verified_tick),
@@ -58,8 +58,8 @@ fun Message(
                             Modifier.padding(3.dp)
                         )
                     }
-                    UserHandleText(
-                        handleName = message.userHandle,
+                    GreyLightText(
+                        text = message.userHandle,
                         fontSize = userHandleSize,
                         modifier = Modifier.padding(start = 3.dp)
                     )

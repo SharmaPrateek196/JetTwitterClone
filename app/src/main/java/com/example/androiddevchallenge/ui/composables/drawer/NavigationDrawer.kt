@@ -1,6 +1,5 @@
 package com.example.androiddevchallenge.ui.composables.drawer
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -9,18 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.UserModel
 import com.example.androiddevchallenge.ui.composables.image.CircularImage
-import com.example.androiddevchallenge.ui.composables.text.UserHandleText
-import com.example.androiddevchallenge.ui.composables.text.UserNameBold
+import com.example.androiddevchallenge.ui.composables.text.GreyLightText
+import com.example.androiddevchallenge.ui.composables.text.BoldText
 import com.example.androiddevchallenge.ui.theme.TwitterTheme
 import com.example.androiddevchallenge.ui.theme.grey
 import com.example.androiddevchallenge.ui.theme.myProfilePictureUrl
@@ -60,15 +56,15 @@ fun NavigationDrawer(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                UserNameBold(
-                    name = currentUser.username,
+                BoldText(
+                    text = currentUser.username,
                     fontSize = 16.sp
                 )
 
                 Spacer(modifier = Modifier.height(4.dp))
 
-                UserHandleText(
-                    handleName = currentUser.userHandle,
+                GreyLightText(
+                    text = currentUser.userHandle,
                     fontSize = 16.sp,
                     modifier = Modifier
                 )
@@ -132,30 +128,30 @@ fun FollowersAndFollowingRow(
     currentUser: UserModel
 ) {
     Row {
-        UserNameBold(
-            name = currentUser.followingCount.toString(),
+        BoldText(
+            text = currentUser.followingCount.toString(),
             fontSize = 14.sp
         )
 
         Spacer(modifier = Modifier.width(4.dp))
 
-        UserHandleText(
-            handleName = "Following",
+        GreyLightText(
+            text = "Following",
             fontSize = 14.sp,
             modifier = Modifier
         )
 
         Spacer(modifier = Modifier.width(12.dp))
 
-        UserNameBold(
-            name = currentUser.followersCount.toString(),
+        BoldText(
+            text = currentUser.followersCount.toString(),
             fontSize = 14.sp
         )
 
         Spacer(modifier = Modifier.width(4.dp))
 
-        UserHandleText(
-            handleName = "Followers",
+        GreyLightText(
+            text = "Followers",
             fontSize = 14.sp,
             modifier = Modifier
         )

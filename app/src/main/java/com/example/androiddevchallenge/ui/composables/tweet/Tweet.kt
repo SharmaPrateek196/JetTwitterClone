@@ -7,16 +7,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.IntrinsicMeasurable
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.domain.TweetModel
 import com.example.androiddevchallenge.ui.composables.image.CircularImage
 import com.example.androiddevchallenge.ui.composables.image.TweetImage
-import com.example.androiddevchallenge.ui.composables.text.UserHandleText
-import com.example.androiddevchallenge.ui.composables.text.UserNameBold
+import com.example.androiddevchallenge.ui.composables.text.GreyLightText
+import com.example.androiddevchallenge.ui.composables.text.BoldText
 import com.example.androiddevchallenge.ui.composables.tweet.Comment
 import com.example.androiddevchallenge.ui.composables.tweet.Like
 import com.example.androiddevchallenge.ui.composables.tweet.Retweet
@@ -51,7 +49,7 @@ fun Tweet(
                 )
             ) {
                 Row(Modifier.height(IntrinsicSize.Max)) {
-                    UserNameBold(name = tweet.tweeterName, fontSize = usernameSize)
+                    BoldText(text = tweet.tweeterName, fontSize = usernameSize)
                     if(tweet.isVerified) {
                         Image(
                             painter = painterResource(R.drawable.ic_verified_tick),
@@ -59,8 +57,8 @@ fun Tweet(
                             Modifier.padding(3.dp)
                         )
                     }
-                    UserHandleText(
-                        handleName = tweet.handleName,
+                    GreyLightText(
+                        text = tweet.handleName,
                         fontSize = userHandleSize,
                         modifier = Modifier.padding(start = 3.dp)
                     )
