@@ -24,7 +24,7 @@ val teal200 = Color(0xFF03DAC5)
 
 val twitterBlue = Color(0xFF1FA1F1)
 val blackLessDark = Color(0xC4010203)
-val grey = Color(0xFF777795)
+val grey = Color(0xFF5f6368)
 
 val white50 = Color(0xFFFFFFFF)
 val white100 = Color(0xFFFAFAFA)
