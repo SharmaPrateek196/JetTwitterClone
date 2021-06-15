@@ -16,14 +16,12 @@ import com.example.androiddevchallenge.ui.theme.tweetActionItemsWidth
 
 @Composable
 fun Share() {
-    Surface {
-        Row {
-            Image(
-                painter = painterResource(id = R.drawable.ic_share),
-                contentDescription = null,
-                modifier = Modifier.size(tweetActionItemsWidth, tweetActionItemsHeight)
-            )
-        }
+    Row {
+        Image(
+            painter = painterResource(id = R.drawable.ic_share),
+            contentDescription = null,
+            modifier = Modifier.size(tweetActionItemsWidth, tweetActionItemsHeight)
+        )
     }
 }
 

@@ -33,5 +33,15 @@ fun NavigationHost(
         composable(BottomNavScreens.Messages.route) {
             MessagesScreen(bottomNavViewModel = bottomNavVM)
         }
+
     }
+}
+
+enum class SearchCategory(val titleText: String) {
+    ForYou("For You"),
+    Covid("COVID-19"),
+    Trending("Trending"),
+    News("News"),
+    Sports("Sports"),
+    Entertainment("Entertainment")
 }

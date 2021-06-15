@@ -48,8 +48,8 @@ fun MessagesList(
                             message = messageModel,
                             modifier = Modifier
                         )
+                        Divider(thickness = (0.8).dp)
                     }
-                    Divider(thickness = 0.5.dp)
                 }
             }
         }

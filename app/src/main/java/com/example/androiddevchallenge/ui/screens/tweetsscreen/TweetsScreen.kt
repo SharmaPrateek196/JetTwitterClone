@@ -47,7 +47,7 @@ fun TweetsScreen(
 
 @Composable
 fun StoriesList(
-    state: TweetsScreenVM.StoriesListState
+    state: StoriesListState
 ) {
     when(state) {
         is StoriesListState.Loading -> {

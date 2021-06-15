@@ -75,7 +75,7 @@ fun Message(
 
                 Text(
                     text = message.messageText,
-                    fontSize = 12.sp,
+                    fontSize = 14.sp,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
                     color = grey
