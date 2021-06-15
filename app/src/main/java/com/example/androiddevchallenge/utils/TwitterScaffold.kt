@@ -8,6 +8,7 @@ import androidx.compose.material.ScaffoldState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.navigation.NavHostController
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.domain.me
 import com.example.androiddevchallenge.ui.composables.bars.TwitterTopAppBar
@@ -21,6 +22,7 @@ fun TwitterScaffold(
     baseApplication: TwitterApplication,
     bottomBar: @Composable () -> Unit,
     bottomNavVM: BottomNavVM,
+    navController: NavHostController,
     content: @Composable ((PaddingValues) -> Unit)
 ) {
     val scaffoldState = rememberScaffoldState()
@@ -57,6 +59,7 @@ fun TwitterScaffold(
                     currentUser = me,
                     onThemeChanged = {
                         baseApplication.onThemeChanged()
+                        navController.popBackStack(navController.graph.startDestinationId, false)
                     },
                     baseApplication
                 )
