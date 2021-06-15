@@ -20,6 +20,7 @@ import com.example.androiddevchallenge.ui.theme.*
 fun TwitterTopAppBar(
     onMenuClicked: () -> Unit,
     hasSearchBar: Boolean,
+    searchHint: String = "",
     hasSettings: Boolean
 ) {
     TopAppBar(
@@ -48,7 +49,9 @@ fun TwitterTopAppBar(
                 Box(
                     modifier = Modifier.weight(5f)
                 ) {
-                    SearchBar()
+                    SearchBar(
+                        searchHint = searchHint
+                    )
                 }
             } else {
                 Icon(
@@ -84,9 +87,10 @@ fun TwitterTopAppBar(
     }
 }
 
-@Preview
 @Composable
-fun SearchBar() {
+fun SearchBar(
+    searchHint: String
+) {
     Surface(
         shape = RoundedCornerShape(60),
         border = BorderStroke(0.5.dp, grey),
@@ -101,7 +105,7 @@ fun SearchBar() {
                 .padding(2.dp),
         ) {
             Text(
-                text = "Search Twitter",
+                text = searchHint,
                 color = MaterialTheme.colors.onSecondary,
                 maxLines = 1,
                 style = TextStyle(

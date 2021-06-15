@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.ui.screens.messages
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
@@ -24,8 +25,10 @@ fun MessagesScreen(
     val messagesMutableState: MessagesScreenVM.MessagesListState by messagesScreenVM.messagesState.observeAsState(
         MessagesScreenVM.MessagesListState.Loading)
 
-    Divider(thickness = 0.5.dp)
-    MessagesList(messagesMutableState)
+    Column() {
+        Divider(thickness = 1.dp)
+        MessagesList(messagesMutableState)
+    }
 }
 
 @Composable

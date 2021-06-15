@@ -25,12 +25,14 @@ fun TwitterScaffold(
 ) {
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-    //val hasSearchBar = remember { mutableStateOf(true) }
     val currentScreen by bottomNavVM.currentScreen.observeAsState()
 
     val topBar: @Composable () -> Unit = {
-        val hasSearchBar = currentScreen == Screens.BottomNavScreens.Search
+        val hasSearchBar = (currentScreen == Screens.BottomNavScreens.Search || currentScreen == Screens.BottomNavScreens.Messages)
         val hasSettings = currentScreen != Screens.BottomNavScreens.Home
+        val searchHint = if(currentScreen == Screens.BottomNavScreens.Search) { "Search Twitter" }
+                        else { "Search for people and groups" }
+
         TwitterTopAppBar(
             onMenuClicked = {
                 scope.launch {
@@ -38,6 +40,7 @@ fun TwitterScaffold(
                 }
             },
             hasSearchBar = hasSearchBar,
+            searchHint = searchHint,
             hasSettings = hasSettings
         )
     }

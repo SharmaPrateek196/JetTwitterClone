@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.androiddevchallenge.TwitterApplication
 import com.example.androiddevchallenge.ui.screens.TweetsScreen
+import com.example.androiddevchallenge.ui.screens.messages.MessagesScreen
 import com.example.androiddevchallenge.ui.screens.searchscreen.SearchScreen
 import com.example.androiddevchallenge.utils.Screens.BottomNavScreens
 
@@ -21,20 +22,16 @@ fun NavigationHost(
         startDestination = BottomNavScreens.Home.route
     ) {
         composable(BottomNavScreens.Home.route) {
-            TweetsScreen(
-                bottomNavViewModel = bottomNavVM
-            )
+            TweetsScreen(bottomNavViewModel = bottomNavVM)
         }
         composable(BottomNavScreens.Search.route) {
-            SearchScreen(
-                bottomNavViewModel = bottomNavVM
-            )
+            SearchScreen(bottomNavViewModel = bottomNavVM)
         }
         composable(BottomNavScreens.Notifications.route) {
 
         }
         composable(BottomNavScreens.Messages.route) {
-
+            MessagesScreen(bottomNavViewModel = bottomNavVM)
         }
     }
 }
