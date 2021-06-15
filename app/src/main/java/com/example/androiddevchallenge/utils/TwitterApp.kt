@@ -32,7 +32,8 @@ fun TwitterApp(
                     navController = navController,
                     screens = bottomNavScreensList
                 )
-            }
+            },
+            bottomNavVM = bottomNavVM
         ) { paddingValues ->
             NavigationHost(
                 navController = navController,

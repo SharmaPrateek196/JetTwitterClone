@@ -51,17 +51,14 @@ fun StoriesList(
 ) {
     when(state) {
         is StoriesListState.Loading -> {
-            Log.d(TAG, "StoriesList: loading")
         }
         is StoriesListState.Success -> {
-            Log.d(TAG, "StoriesList: Success")
             StoryPalette(
                 stories = state.data,
                 modifier = Modifier
             )
         }
         is StoriesListState.Error -> {
-            Log.d(TAG, "StoriesList: Error")
         }
     }
 }

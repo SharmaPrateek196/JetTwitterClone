@@ -30,7 +30,6 @@ class TweetsScreenVM @Inject constructor(): ViewModel() {
     }
 
     fun loadTweets() {
-        Log.d("TAG", "loadTweets: ")
         viewModelScope.launch {
             _tweetState.value = TweetsListState.Loading
             delay(300)
@@ -40,7 +39,6 @@ class TweetsScreenVM @Inject constructor(): ViewModel() {
     }
 
     fun loadStories() {
-        Log.d("TAG", "loadStories: ")
         viewModelScope.launch {
             _storiesState.value = StoriesListState.Loading
             delay(300)

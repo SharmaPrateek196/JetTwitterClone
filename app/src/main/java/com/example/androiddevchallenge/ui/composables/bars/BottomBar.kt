@@ -1,17 +1,21 @@
 package com.example.androiddevchallenge.ui.composables.bars
 
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.width
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.androiddevchallenge.ui.theme.TwitterTheme
+import com.example.androiddevchallenge.ui.theme.darkThemeBg
 import com.example.androiddevchallenge.utils.Screens
 import com.example.androiddevchallenge.ui.theme.grey
 
@@ -20,28 +24,35 @@ fun BottomBar(
     screens: List<Screens.BottomNavScreens>,
     navController: NavController
 ) {
-    BottomNavigation {
-        val navBackStackEntry: State<NavBackStackEntry?> = navController.currentBackStackEntryAsState()
-        val currentRoute = navBackStackEntry.value?.destination?.route
-        screens.forEach { screen ->
-            BottomNavigationItem(
-                modifier = Modifier.align(Alignment.CenterVertically),
-                icon = {
-                    Icon(
-                        painterResource(id = screen.iconResource),
-                        contentDescription = "",
-                        tint = grey
-                    )
-                },
-                label = { Text(screen.title) },
-                selected = currentRoute == screen.route,
-                onClick = {
-                    navController.navigate(screen.route) {
-                        navController.popBackStack(navController.graph.startDestinationId, false)
-                        launchSingleTop = true
+    Column {
+        Divider(thickness = 0.5.dp)
+        BottomNavigation {
+            val navBackStackEntry by navController.currentBackStackEntryAsState()
+            val currentRoute = navBackStackEntry?.destination?.route
+            screens.forEach { screen ->
+                BottomNavigationItem(
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .background(MaterialTheme.colors.primary),
+                    icon = {
+                        Icon(
+                            painterResource(id = screen.iconResource),
+                            contentDescription = "",
+                            tint = grey
+                        )
+                    },
+                    selected = currentRoute == screen.route,
+                    onClick = {
+
+                        if(currentRoute != screen.route) {
+                            navController.navigate(screen.route) {
+                                navController.popBackStack(navController.graph.startDestinationId, false)
+                                launchSingleTop = true
+                            }
+                        }
                     }
-                }
-            )
+                )
+            }
         }
     }
 }
