@@ -9,12 +9,10 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BottomNavVM @Inject constructor(): ViewModel() {
-    private val _currentScreen = MutableLiveData<Screens>()
+    private val _currentScreen = MutableLiveData<Screens>(Screens.BottomNavScreens.Home)
     val currentScreen: LiveData<Screens> = _currentScreen
 
     fun setCurrentScreen(screen: Screens) {
         _currentScreen.value = screen
-
-        Log.d("TAG", "setCurrentScreen: "+currentScreen.value.toString())
     }
 }

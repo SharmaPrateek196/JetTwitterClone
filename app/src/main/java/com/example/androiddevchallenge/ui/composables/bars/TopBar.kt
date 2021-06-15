@@ -19,7 +19,8 @@ import com.example.androiddevchallenge.ui.theme.*
 @Composable
 fun TwitterTopAppBar(
     onMenuClicked: () -> Unit,
-    hasSearchBar: Boolean
+    hasSearchBar: Boolean,
+    hasSettings: Boolean
 ) {
     TopAppBar(
         elevation = 0.dp
@@ -60,14 +61,25 @@ fun TwitterTopAppBar(
                 )
             }
 
-            Icon(
-                painter = painterResource(id = R.drawable.ic_timeline),
-                contentDescription = null,
-                modifier = Modifier
-                    .size(22.dp)
-                    .weight(1f, true),
-                tint = twitterBlue
-            )
+            if(hasSettings) {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_settings),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(22.dp)
+                        .weight(1f, true),
+                    tint = twitterBlue
+                )
+            } else {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_timeline),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(22.dp)
+                        .weight(1f, true),
+                    tint = twitterBlue
+                )
+            }
         }
     }
 }

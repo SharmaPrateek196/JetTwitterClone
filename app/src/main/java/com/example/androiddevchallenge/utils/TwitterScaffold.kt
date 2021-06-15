@@ -28,17 +28,17 @@ fun TwitterScaffold(
     //val hasSearchBar = remember { mutableStateOf(true) }
     val currentScreen by bottomNavVM.currentScreen.observeAsState()
 
-    Log.d("TAG", "TwitterScaffold: "+currentScreen.toString())
-
     val topBar: @Composable () -> Unit = {
         val hasSearchBar = currentScreen == Screens.BottomNavScreens.Search
+        val hasSettings = currentScreen != Screens.BottomNavScreens.Home
         TwitterTopAppBar(
             onMenuClicked = {
                 scope.launch {
                     scaffoldState.drawerState.open()
                 }
             },
-            hasSearchBar = hasSearchBar
+            hasSearchBar = hasSearchBar,
+            hasSettings = hasSettings
         )
     }
 
