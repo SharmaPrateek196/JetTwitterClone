@@ -20,18 +20,16 @@ fun UserNameBold(
     name: String,
     fontSize: TextUnit
 ) {
-    Surface {
-        Text(
-            text = name,
-            style = TextStyle(
-                color = MaterialTheme.colors.onPrimary,
-                fontSize = fontSize,
-                fontWeight = FontWeight.Bold,
-            ),
-            overflow = TextOverflow.Ellipsis,
-            maxLines = 1
-        )
-    }
+    Text(
+        text = name,
+        style = TextStyle(
+            color = MaterialTheme.colors.onPrimary,
+            fontSize = fontSize,
+            fontWeight = FontWeight.Bold,
+        ),
+        overflow = TextOverflow.Ellipsis,
+        maxLines = 1
+    )
 }
 
 @Preview

@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.circularShape
 import com.google.accompanist.coil.rememberCoilPainter
 
@@ -17,13 +18,13 @@ fun CircularImage(
     imageViewSize: Int
 ) {
     Image(
-        painter = rememberCoilPainter(imageResource) ,
+        painter = rememberCoilPainter(request = imageResource, previewPlaceholder = R.drawable.twitter_logo) ,
         null,
         contentScale = ContentScale.Crop,
         modifier = modifier
             .size(imageViewSize.dp)
             .clip(
                 shape = circularShape
-            )
+            ),
     )
 }

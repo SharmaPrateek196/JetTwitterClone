@@ -8,7 +8,7 @@ object TweetsRepo {
         TweetModel (
             id = 0,
             tweeterName = "Arnav Gupta",
-            handleName = "@championswimmer",
+            handleName = "@championswimmerr",
             timeTweeted = "2m",
             isVerified = true,
             tweetText = "If you're asking about Spaces - yes eventually I plan to get there too. \n" +
@@ -30,7 +30,7 @@ object TweetsRepo {
         TweetModel (
             id = 1,
             tweeterName = "Kunal Shah",
-            handleName = "@kunalb11",
+            handleName = "@kunalb11.",
             timeTweeted = "6m",
             isVerified = true,
             tweetText = "West grew more as inheritance was given to first born by default and other kids had to explore to grow.\n\n Indian lands kept getting divided in small parts due to generational sharing. Indian companies suffer same curse where more people are bothered dividing territory vs expanding.",
@@ -47,7 +47,7 @@ object TweetsRepo {
         TweetModel (
             id = 2,
             tweeterName = "Microsoft Education",
-            handleName = "@MicrosoftEDU",
+            handleName = "@MicrusoftEDU",
             timeTweeted = "9m",
             isVerified = true,
             tweetText = "#ISTELive planning tip: use the #MicrosoftEDU agenda to build your own schedule! You'll get an inside look into the brand-new Solutions Hub and learn more about upcoming sessions, activities, and #TeacherPD opportunities: https://msft.it/6019VhWmN",
@@ -64,7 +64,7 @@ object TweetsRepo {
         TweetModel (
             id = 7,
             tweeterName = "Narendra Modi",
-            handleName = "@narendramodi",
+            handleName = "@narendramodii",
             timeTweeted = "1h",
             isVerified = true,
             tweetText = "Congratulations to " +
@@ -87,7 +87,7 @@ object TweetsRepo {
         TweetModel (
             id = 3,
             tweeterName = "Asif",
-            handleName = "@Asifiiitm",
+            handleName = "@Asifiitm",
             timeTweeted = "1h",
             isVerified = false,
             tweetText = "Am I worthy? A thread\n" +
@@ -108,7 +108,7 @@ object TweetsRepo {
         TweetModel (
             id = 4,
             tweeterName = "Ashish Chanchlani",
-            handleName = "@ashchanchlani",
+            handleName = "@ashchanchlan",
             timeTweeted = "2h",
             isVerified = true,
             tweetText = "This tweet is for you sharib bhai @sharibhashmi i am soo proud of you. You are one killer actor. Can't wait to watch more of you.",
@@ -125,7 +125,7 @@ object TweetsRepo {
         TweetModel (
             id = 5,
             tweeterName = "Satya Nadella",
-            handleName = "@satyanadella",
+            handleName = "@satyanadela",
             timeTweeted = "4h",
             isVerified = true,
             tweetText = "Gaming is fundamentally aligned with our mission as a company. Great to chat with " +
@@ -144,7 +144,7 @@ object TweetsRepo {
         TweetModel (
             id = 6,
             tweeterName = "Ankur Warikoo",
-            handleName = "@warikoo",
+            handleName = "@warikooo",
             timeTweeted = "4h",
             isVerified = true,
             tweetText = "\"This is good work\" isn't feedback.\n" +
@@ -167,7 +167,7 @@ object TweetsRepo {
         TweetModel (
             id = 8,
             tweeterName = "Priyanka Chopra",
-            handleName = "@priyankachopra",
+            handleName = "@priynkachopra",
             timeTweeted = "9 Jun",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",
@@ -184,7 +184,7 @@ object TweetsRepo {
         TweetModel (
             id = 1,
             tweeterName = "Kunal Shah",
-            handleName = "@kunalb11",
+            handleName = "@kunalb11.",
             timeTweeted = "9h",
             isVerified = true,
             tweetText = "West grew more as inheritance was given to first born by default and other kids had to explore to grow. Indian lands kept getting divided in small parts due to generational sharing.\n\n Indian companies suffer same curse where more people are bothered dividing territory vs expanding.",
@@ -201,7 +201,7 @@ object TweetsRepo {
         TweetModel (
             id = 2,
             tweeterName = "Microsoft Education",
-            handleName = "@MicrosoftEDU",
+            handleName = "@MicrusoftEDU",
             timeTweeted = "2m",
             isVerified = true,
             tweetText = "#ISTELive planning tip: use the #MicrosoftEDU agenda to build your own schedule! You'll get an inside look into the brand-new Solutions Hub and learn more about upcoming sessions, activities, and #TeacherPD opportunities: https://msft.it/6019VhWmN",
@@ -218,7 +218,7 @@ object TweetsRepo {
         TweetModel (
             id = 7,
             tweeterName = "Narendra Modi",
-            handleName = "@narendramodi",
+            handleName = "@narendramodii",
             timeTweeted = "9m",
             isVerified = true,
             tweetText = "Congratulations to " +
@@ -241,7 +241,7 @@ object TweetsRepo {
         TweetModel (
             id = 4,
             tweeterName = "Ashish Chanchlani",
-            handleName = "@ashchanchlani",
+            handleName = "@ashchanchlanii",
             timeTweeted = "Jun 9",
             isVerified = true,
             tweetText = "This tweet is for you sharib bhai @sharibhashmi i am soo proud of you. You are one killer actor. Can't wait to watch more of you.",
@@ -258,7 +258,7 @@ object TweetsRepo {
         TweetModel (
             id = 5,
             tweeterName = "Satya Nadella",
-            handleName = "@satyanadella",
+            handleName = "@satyanadela",
             timeTweeted = "4m",
             isVerified = true,
             tweetText = "Gaming is fundamentally aligned with our mission as a company. Great to chat with " +
@@ -277,7 +277,7 @@ object TweetsRepo {
         TweetModel (
             id = 6,
             tweeterName = "Ankur Warikoo",
-            handleName = "@warikoo",
+            handleName = "@warikooo",
             timeTweeted = "4h",
             isVerified = true,
             tweetText = "\"This is good work\" isn't feedback.\n" +
@@ -300,7 +300,7 @@ object TweetsRepo {
         TweetModel (
             id = 8,
             tweeterName = "Priyanka Chopra",
-            handleName = "@priyankachopra",
+            handleName = "@priynkachopra",
             timeTweeted = "7h",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",

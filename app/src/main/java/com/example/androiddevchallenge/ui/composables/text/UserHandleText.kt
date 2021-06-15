@@ -17,18 +17,16 @@ fun UserHandleText(
     fontSize: TextUnit,
     modifier: Modifier
 ) {
-    Surface {
-        Text(
-            text = handleName,
-            style = TextStyle(
-                color = grey,
-                fontSize = fontSize,
-            ),
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            modifier = modifier
-        )
-    }
+    Text(
+        text = handleName,
+        style = TextStyle(
+            color = grey,
+            fontSize = fontSize,
+        ),
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+        modifier = modifier
+    )
 }
 
 @Preview

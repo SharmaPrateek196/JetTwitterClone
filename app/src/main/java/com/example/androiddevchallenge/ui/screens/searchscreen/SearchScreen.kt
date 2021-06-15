@@ -21,7 +21,5 @@ fun SearchScreen(
 ) {
     bottomNavViewModel.setCurrentScreen(Screens.BottomNavScreens.Search)
 
-    Column {
-        Text(text = "SearchScreen", Modifier.fillMaxSize())
-    }
+
 }
