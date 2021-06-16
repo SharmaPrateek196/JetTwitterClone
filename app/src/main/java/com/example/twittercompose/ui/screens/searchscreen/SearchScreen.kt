@@ -3,13 +3,16 @@ package com.example.twittercompose.ui.screens.searchscreen
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.TweenSpec
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.twittercompose.utils.BottomNavVM
@@ -42,11 +45,11 @@ fun SearchScreen(
         Crossfade(currentCategory, animationSpec = tweenSpec) { category ->
             when (category) {
                 SearchCategory.ForYou -> Surface { ForYouLayout(forYouMutableState) }
-                SearchCategory.Covid -> Surface {Text(text = "Covid Screen - Under Construction")}
-                SearchCategory.Trending -> Surface {Text(text = "Trending Screen - Under Construction")}
-                SearchCategory.News -> Surface {Text(text = "News Screen - Under Construction")}
-                SearchCategory.Sports -> Surface {Text(text = "Sports Screen - Under Construction")}
-                SearchCategory.Entertainment -> Surface {Text(text = "Entertainment Screen - Under Construction") }
+                SearchCategory.Covid -> UnderConstructionPlaceholer()
+                SearchCategory.Trending -> UnderConstructionPlaceholer()
+                SearchCategory.News -> UnderConstructionPlaceholer()
+                SearchCategory.Sports -> UnderConstructionPlaceholer()
+                SearchCategory.Entertainment -> UnderConstructionPlaceholer()
             }
         }
     }
@@ -64,4 +67,17 @@ private fun getAnimSpec(): TweenSpec<Float> {
         durationMillis = 600,
         easing = LinearOutSlowInEasing
     )
+}
+
+@Composable
+fun UnderConstructionPlaceholer() {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Text(
+            text = "This screen is under construction..."
+        )
+    }
 }

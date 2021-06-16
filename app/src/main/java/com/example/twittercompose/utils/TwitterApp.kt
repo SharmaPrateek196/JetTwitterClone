@@ -1,6 +1,9 @@
 package com.example.twittercompose.utils
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.twittercompose.TwitterApplication
@@ -27,11 +30,11 @@ fun TwitterApp(
             },
             bottomNavVM = bottomNavVM,
             navController = navController,
-        ) { paddingValues ->
+        ) {
             NavigationHost(
                 navController = navController,
                 bottomNavVM = bottomNavVM,
-                baseApplication = baseApplication
+                modifier = Modifier.padding(bottom = 55.dp)
             )
         }
     }
