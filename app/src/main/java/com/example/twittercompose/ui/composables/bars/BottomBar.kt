@@ -11,8 +11,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.twittercompose.R
 import com.example.twittercompose.utils.Screens
 import com.example.twittercompose.ui.theme.grey
+import com.example.twittercompose.ui.theme.twitterBlue
 
 @Composable
 fun BottomBar(
@@ -30,11 +32,7 @@ fun BottomBar(
                         .align(Alignment.CenterVertically)
                         .background(MaterialTheme.colors.primary),
                     icon = {
-                        Icon(
-                            painterResource(id = screen.iconResource),
-                            contentDescription = "",
-                            tint = grey
-                        )
+                        BottomNavIcon(currentRoute, screen.route, screen.iconResource, screen.iconResourceSelected)
                     },
                     selected = currentRoute == screen.route,
                     onClick = {
@@ -49,4 +47,24 @@ fun BottomBar(
             }
         }
     }
+}
+
+@Composable
+fun BottomNavIcon(currentRoute: String?, screenRoute: String, iconResourceUnselected: Int, iconResourceSelected: Int) {
+    var tint = grey
+    var iconResource = iconResourceUnselected
+
+    if(currentRoute == screenRoute) {
+        iconResource = iconResourceSelected
+        tint = twitterBlue
+    } else {
+        iconResource = iconResourceUnselected
+        tint = grey
+    }
+
+    Icon(
+        painterResource(id = iconResource),
+        contentDescription = "",
+        tint = tint
+    )
 }
