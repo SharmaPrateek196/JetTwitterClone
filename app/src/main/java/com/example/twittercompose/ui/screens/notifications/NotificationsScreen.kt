@@ -18,7 +18,7 @@ fun NotificationsScreen(
     notificationsScreenVM: NotificationsScreenVM = hiltViewModel(),
     bottomNavViewModel: BottomNavVM
 ) {
-    bottomNavViewModel.setCurrentScreen(Screens.BottomNavScreens.Messages)
+    bottomNavViewModel.setCurrentScreen(Screens.BottomNavScreens.Notifications)
 
     Column(
         modifier = Modifier.fillMaxSize(),
