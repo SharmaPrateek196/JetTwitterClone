@@ -54,7 +54,7 @@ fun Tweet(
                         Image(
                             painter = painterResource(R.drawable.ic_verified_tick),
                             contentDescription = null,
-                            Modifier.padding(3.dp)
+                            Modifier.padding(3.dp).size(14.dp)
                         )
                     }
                     GreyLightText(
