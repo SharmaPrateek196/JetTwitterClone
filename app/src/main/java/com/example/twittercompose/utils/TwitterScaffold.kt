@@ -6,12 +6,14 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import com.example.twittercompose.TwitterApplication
 import com.example.twittercompose.domain.me
 import com.example.twittercompose.ui.composables.bars.TwitterTopAppBar
 import com.example.twittercompose.ui.composables.drawer.NavigationDrawer
 import com.example.twittercompose.ui.theme.TwitterTheme
+import com.google.accompanist.insets.systemBarsPadding
 import kotlinx.coroutines.launch
 
 
@@ -63,6 +65,7 @@ fun TwitterScaffold(
                 )
             },
             bottomBar = bottomBar,
+            modifier = Modifier.systemBarsPadding(),
             content = content
         )
     }
