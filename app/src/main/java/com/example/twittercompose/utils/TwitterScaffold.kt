@@ -29,10 +29,14 @@ fun TwitterScaffold(
     val scope = rememberCoroutineScope()
     val currentScreen by bottomNavVM.currentScreen.observeAsState()
 
-    val topBar: @Composable () -> Unit = {
-        val hasSearchBar = (currentScreen == Screens.BottomNavScreens.Search || currentScreen == Screens.BottomNavScreens.Messages)
-        val hasSettings = currentScreen != Screens.BottomNavScreens.Home
-        val searchHint = if(currentScreen == Screens.BottomNavScreens.Search) { "Search Twitter" }
+    val hasSearchBar1 = remember {mutableStateOf(false)}
+    val hasSettings1 = remember {mutableStateOf(false)}
+    val searchHint1 = remember { mutableStateOf("")}
+
+    val topBar: @Composable (Screens?) -> Unit = { currentlyVisibleScreen ->
+        hasSearchBar1.value = (currentlyVisibleScreen == Screens.BottomNavScreens.Search || currentlyVisibleScreen == Screens.BottomNavScreens.Messages)
+        hasSettings1.value = currentlyVisibleScreen != Screens.BottomNavScreens.Home
+        searchHint1.value = if(currentlyVisibleScreen == Screens.BottomNavScreens.Search) { "Search Twitter" }
                         else { "Search for people and groups" }
 
         TwitterTopAppBar(
@@ -41,9 +45,9 @@ fun TwitterScaffold(
                     scaffoldState.drawerState.open()
                 }
             },
-            hasSearchBar = hasSearchBar,
-            searchHint = searchHint,
-            hasSettings = hasSettings
+            hasSearchBar = hasSearchBar1.value,
+            searchHint = searchHint1.value,
+            hasSettings = hasSettings1.value
         )
     }
 
@@ -51,7 +55,7 @@ fun TwitterScaffold(
         darkTheme = baseApplication.isGlobalDarkTheme.value,
     ) {
         Scaffold(
-            topBar = { topBar() },
+            topBar = { topBar(currentScreen) },
             drawerBackgroundColor = MaterialTheme.colors.primary,
             scaffoldState = scaffoldState,
             drawerContent = {

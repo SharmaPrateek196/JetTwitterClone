@@ -10,9 +10,6 @@ val userHandleSize = 14.sp
 val timeTextSize = 14.sp
 val tweetActionItemsFontSize = 13.sp
 
-
-
-
 // view sizes
 val tweetActionItemsWidth = 13.dp
 val tweetActionItemsHeight = 13.dp

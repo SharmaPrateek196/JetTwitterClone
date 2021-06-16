@@ -38,7 +38,6 @@ fun BottomBar(
                     },
                     selected = currentRoute == screen.route,
                     onClick = {
-
                         if(currentRoute != screen.route) {
                             navController.navigate(screen.route) {
                                 navController.popBackStack(navController.graph.startDestinationId, false)

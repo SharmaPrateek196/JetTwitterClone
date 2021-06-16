@@ -3,7 +3,6 @@ package com.example.twittercompose.data
 import com.example.twittercompose.domain.StoryModel
 
 object StoriesRepo {
-
     val stories = listOf(
         StoryModel(
             "https://pbs.twimg.com/profile_images/799664820848992256/QX3Pjg3V_400x400.jpg",

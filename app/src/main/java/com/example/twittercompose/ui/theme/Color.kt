@@ -17,13 +17,8 @@ package com.example.twittercompose.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val purple200 = Color(0xFFBB86FC)
-val purple500 = Color(0xFF6200EE)
-val purple700 = Color(0xFF3700B3)
-val teal200 = Color(0xFF03DAC5)
 
 val twitterBlue = Color(0xFF1FA1F1)
-val blackLessDark = Color(0xC4010203)
 val grey = Color(0xFF5f6368)
 
 val white50 = Color(0xFFFFFFFF)

@@ -4,7 +4,6 @@ import com.example.twittercompose.domain.TweetModel
 
 object TweetsRepo {
     val tweets = listOf(
-
         TweetModel (
             id = 0,
             tweeterName = "Arnav Gupta",
@@ -26,7 +25,6 @@ object TweetsRepo {
             totalRetweets = 131,
             totalLikes = 93
         ),
-
         TweetModel (
             id = 1,
             tweeterName = "Kunal Shah",
@@ -43,7 +41,6 @@ object TweetsRepo {
             totalRetweets = 139,
             totalLikes = 91
         ),
-
         TweetModel (
             id = 2,
             tweeterName = "Microsoft Education",
@@ -60,9 +57,8 @@ object TweetsRepo {
             totalRetweets = 78,
             totalLikes = 542
         ),
-
         TweetModel (
-            id = 7,
+            id = 3,
             tweeterName = "Narendra Modi",
             handleName = "@narendramodii",
             timeTweeted = "1h",
@@ -83,9 +79,8 @@ object TweetsRepo {
             totalRetweets = 909,
             totalLikes = 1200
         ),
-
         TweetModel (
-            id = 3,
+            id = 4,
             tweeterName = "Asif",
             handleName = "@Asifiitm",
             timeTweeted = "1h",
@@ -104,9 +99,8 @@ object TweetsRepo {
             totalRetweets = 83,
             totalLikes = 98
         ),
-
         TweetModel (
-            id = 4,
+            id = 5,
             tweeterName = "Ashish Chanchlani",
             handleName = "@ashchanchlan",
             timeTweeted = "2h",
@@ -121,9 +115,8 @@ object TweetsRepo {
             totalRetweets = 230,
             totalLikes = 4990
         ),
-
         TweetModel (
-            id = 5,
+            id = 6,
             tweeterName = "Satya Nadella",
             handleName = "@satyanadela",
             timeTweeted = "4h",
@@ -140,9 +133,8 @@ object TweetsRepo {
             totalRetweets = 139,
             totalLikes = 765
         ),
-
         TweetModel (
-            id = 6,
+            id = 7,
             tweeterName = "Ankur Warikoo",
             handleName = "@warikooo",
             timeTweeted = "4h",
@@ -162,8 +154,6 @@ object TweetsRepo {
             totalRetweets = 89,
             totalLikes = 872
         ),
-
-
         TweetModel (
             id = 8,
             tweeterName = "Priyanka Chopra",
@@ -180,12 +170,11 @@ object TweetsRepo {
             totalRetweets = 344,
             totalLikes = 987
         ),
-
         TweetModel (
-            id = 1,
+            id = 9,
             tweeterName = "Kunal Shah",
             handleName = "@kunalb11.",
-            timeTweeted = "9h",
+            timeTweeted = "6 Jun",
             isVerified = true,
             tweetText = "West grew more as inheritance was given to first born by default and other kids had to explore to grow. Indian lands kept getting divided in small parts due to generational sharing.\n\n Indian companies suffer same curse where more people are bothered dividing territory vs expanding.",
             userImageResource = "https://pbs.twimg.com/profile_images/1190747917998546944/D3U5FNa7_400x400.jpg",
@@ -197,12 +186,11 @@ object TweetsRepo {
             totalRetweets = 139,
             totalLikes = 91
         ),
-
         TweetModel (
-            id = 2,
+            id = 10,
             tweeterName = "Microsoft Education",
             handleName = "@MicrusoftEDU",
-            timeTweeted = "2m",
+            timeTweeted = "5 Jun",
             isVerified = true,
             tweetText = "#ISTELive planning tip: use the #MicrosoftEDU agenda to build your own schedule! You'll get an inside look into the brand-new Solutions Hub and learn more about upcoming sessions, activities, and #TeacherPD opportunities: https://msft.it/6019VhWmN",
             userImageResource = "https://pbs.twimg.com/profile_images/1268176956002107392/hXS71f2x_400x400.jpg",
@@ -214,12 +202,11 @@ object TweetsRepo {
             totalRetweets = 78,
             totalLikes = 542
         ),
-
         TweetModel (
-            id = 7,
+            id = 11,
             tweeterName = "Narendra Modi",
             handleName = "@narendramodii",
-            timeTweeted = "9m",
+            timeTweeted = "1 Jun",
             isVerified = true,
             tweetText = "Congratulations to " +
                     "@iiscbangalore" +
@@ -237,12 +224,11 @@ object TweetsRepo {
             totalRetweets = 909,
             totalLikes = 1200
         ),
-
         TweetModel (
-            id = 4,
+            id = 12,
             tweeterName = "Ashish Chanchlani",
             handleName = "@ashchanchlanii",
-            timeTweeted = "Jun 9",
+            timeTweeted = "28 May",
             isVerified = true,
             tweetText = "This tweet is for you sharib bhai @sharibhashmi i am soo proud of you. You are one killer actor. Can't wait to watch more of you.",
             userImageResource = "https://pbs.twimg.com/profile_images/1284149564031762432/1EnB9vtz_400x400.jpg",
@@ -254,9 +240,8 @@ object TweetsRepo {
             totalRetweets = 230,
             totalLikes = 4990
         ),
-
         TweetModel (
-            id = 5,
+            id = 13,
             tweeterName = "Satya Nadella",
             handleName = "@satyanadela",
             timeTweeted = "4m",
@@ -273,12 +258,11 @@ object TweetsRepo {
             totalRetweets = 139,
             totalLikes = 765
         ),
-
         TweetModel (
-            id = 6,
+            id = 14,
             tweeterName = "Ankur Warikoo",
             handleName = "@warikooo",
-            timeTweeted = "4h",
+            timeTweeted = "26 May",
             isVerified = true,
             tweetText = "\"This is good work\" isn't feedback.\n" +
                     "\"This is bad work\" isn't feedback.\n" +
@@ -295,13 +279,11 @@ object TweetsRepo {
             totalRetweets = 89,
             totalLikes = 872
         ),
-
-
         TweetModel (
-            id = 8,
+            id = 15,
             tweeterName = "Priyanka Chopra",
             handleName = "@priynkachopra",
-            timeTweeted = "7h",
+            timeTweeted = "22 May",
             isVerified = true,
             tweetText = "It never gets easier..... Love you dad!!",
             userImageResource = "https://pbs.twimg.com/profile_images/1403400684226052098/ZJ4cQ2Bb_400x400.jpg",

@@ -3,7 +3,6 @@ package com.example.twittercompose.data
 import com.example.twittercompose.domain.ForYouModel
 
 object SearchRepo {
-
     val forYouData = listOf(
         ForYouModel(
             id = 1,
@@ -59,7 +58,5 @@ object SearchRepo {
             heading = "A top Chinese scientist at Wuhan lab speaks out",
             additionalComment = "95.2K Tweets"
         ),
-
     )
-
 }

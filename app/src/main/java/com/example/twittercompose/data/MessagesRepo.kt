@@ -3,9 +3,7 @@ package com.example.twittercompose.data
 import com.example.twittercompose.domain.MessageModel
 
 object MessagesRepo {
-
     val messages = listOf(
-
         MessageModel(
             id = 0,
             username = "Sundar",
@@ -102,8 +100,5 @@ object MessagesRepo {
             messageText = "Hey Prateek, thank you so much for the treat!",
             userProfileUrl = "https://pbs.twimg.com/profile_images/1344886403444817920/uvBOq5Wc_400x400.jpg"
         ),
-
-
     )
-
 }

@@ -31,8 +31,6 @@ class MessagesScreenVM @Inject constructor(): ViewModel() {
         }
     }
 
-
-
     sealed class MessagesListState() {
         object Loading: MessagesListState()
         class Success(val data: List<MessageModel>): MessagesListState()
