@@ -11,21 +11,21 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.twittercompose.ui.composables.Tweet
 import com.example.twittercompose.ui.composables.story.StoryPalette
-import com.example.twittercompose.ui.screens.tweetsscreen.TweetsScreenVM
-import com.example.twittercompose.ui.screens.tweetsscreen.TweetsScreenVM.StoriesListState
-import com.example.twittercompose.ui.screens.tweetsscreen.TweetsScreenVM.TweetsListState
+import com.example.twittercompose.ui.screens.tweetsscreen.HomeScreenVM
+import com.example.twittercompose.ui.screens.tweetsscreen.HomeScreenVM.StoriesListState
+import com.example.twittercompose.ui.screens.tweetsscreen.HomeScreenVM.TweetsListState
 import com.example.twittercompose.utils.BottomNavVM
 import com.example.twittercompose.utils.Screens
 
 @Composable
 fun TweetsScreen(
-    tweetsScreenViewModel: TweetsScreenVM = hiltViewModel(),
+    homeScreenViewModel: HomeScreenVM = hiltViewModel(),
     bottomNavViewModel: BottomNavVM
 ) {
     bottomNavViewModel.setCurrentScreen(Screens.BottomNavScreens.Home)
 
-    val storiesMutableState: StoriesListState by tweetsScreenViewModel.storiesState.observeAsState(StoriesListState.Loading)
-    val tweetsMutableState: TweetsListState by tweetsScreenViewModel.tweetState.observeAsState(TweetsListState.Loading)
+    val storiesMutableState: StoriesListState by homeScreenViewModel.storiesState.observeAsState(StoriesListState.Loading)
+    val tweetsMutableState: TweetsListState by homeScreenViewModel.tweetState.observeAsState(TweetsListState.Loading)
 
     Column(
         modifier = Modifier.fillMaxSize()

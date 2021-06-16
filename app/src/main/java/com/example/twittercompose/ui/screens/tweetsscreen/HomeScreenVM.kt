@@ -15,7 +15,7 @@ import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
-class TweetsScreenVM @Inject constructor(): ViewModel() {
+class HomeScreenVM @Inject constructor(): ViewModel() {
 
     private val _tweetState = MutableLiveData<TweetsListState>()
     val tweetState: LiveData<TweetsListState> = _tweetState
