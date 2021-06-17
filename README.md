@@ -1,11 +1,11 @@
 # twitter-compose
 
-## This app's UI is solely made by the newly Jetpack Compose library
+## This app's UI is solely made by the newly Jetpack Compose library 💗
 
-### Disclaimer
+### Disclaimer 🙏
 This android application is built to learn the latest Jetpack Compose library. The tweets are used only for showcasing purposes. There is no bad intention for anything included in this app.
 
-### Features 
+### Features 😎
 
 - Light and Dark mode and easy switching between them
 - Bottom navigation for all four screens
@@ -24,12 +24,12 @@ This android application is built to learn the latest Jetpack Compose library. T
 
 
 ### Screens
-Yet to be uploaded.....
+Yet to be uploaded..... 
 
 ### Status: 🚧 In progress
 <p>This twitter clone is still under development and some screens are yet to be designed.</p>
 
-### Libraries used
+### Libraries used 📚
 
 * [Jetpack Compose]
 * [Accompanist]
@@ -40,6 +40,9 @@ Yet to be uploaded.....
 [Accompanist]: https://github.com/chrisbanes/accompanist
 [Coroutines]: https://developer.android.com/kotlin/coroutines
 [Compose Navigation]: https://developer.android.com/jetpack/compose/navigation
+
+### P.S. -
+Your stars on this library means you appreciate my work 😇
 
 
 ### License
