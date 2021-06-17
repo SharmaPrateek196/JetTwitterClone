@@ -1,6 +1,6 @@
 # twitter-compose
 
-## This app's UI is solely made by the newly Jetpack Compose library 💗
+## This app's UI is solely made with the latest Jetpack Compose library ❤️
 
 ### Disclaimer 🙏
 This android application is built to learn the latest Jetpack Compose library. The tweets are used only for showcasing purposes. There is no bad intention for anything included in this app.
@@ -24,7 +24,17 @@ This android application is built to learn the latest Jetpack Compose library. T
 
 
 ### Screens
-Yet to be uploaded..... 
+HomeScreen(Light)             |  HomeScreen(Dark) | HomeScreen(Light) | HomeScreen(Dark)
+:-------------------------:|:-------------------------: | :-------------------------: | :-------------------------: 
+<img src="app/src/main/java/com/example/twittercompose/screenshots/HomeLight1.png" width=240 />  |  <img src="app/src/main/java/com/example/twittercompose/screenshots/HomeDark1.png" width=240 /> | <img src="app/src/main/java/com/example/twittercompose/screenshots/HomeLight2.png" width=240 /> | <img src="app/src/main/java/com/example/twittercompose/screenshots/HomeDark2.png" width=240 />
+
+SearchScreen(Light)             |  SearchScreen(Dark) | MessageScreen(Light) | MessageScreen(Dark)
+:-------------------------:|:-------------------------: | :-------------------------: | :-------------------------: 
+<img src="app/src/main/java/com/example/twittercompose/screenshots/SearchForYouLight1.png" width=240 />  |  <img src="app/src/main/java/com/example/twittercompose/screenshots/SearchForYouDark1.png" width=240 /> | <img src="app/src/main/java/com/example/twittercompose/screenshots/MessageLight1.png" width=240 /> | <img src="app/src/main/java/com/example/twittercompose/screenshots/MessageDark1.png" width=240 />
+
+DrawerScreen(Light)             |  DrawerScreen(Dark) | 
+:-------------------------:|:-------------------------: | 
+<img src="app/src/main/java/com/example/twittercompose/screenshots/DrawerLight1.png" width=240 />  |  <img src="app/src/main/java/com/example/twittercompose/screenshots/DrawerDark1.png" width=240 />
 
 ### Status: 🚧 In progress
 <p>This twitter clone is still under development and some screens are yet to be designed.</p>
@@ -41,7 +51,7 @@ Yet to be uploaded.....
 [Coroutines]: https://developer.android.com/kotlin/coroutines
 [Compose Navigation]: https://developer.android.com/jetpack/compose/navigation
 
-### P.S. -
+### P.S. 🙃
 Your stars on this library means you appreciate my work 😇
 
 
